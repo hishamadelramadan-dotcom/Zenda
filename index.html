@@ -3,831 +3,1019 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Zenda — Run your business. We handle the rest.</title>
-<meta name="description" content="Smart scheduling, automated reminders, and growth tools for UAE and GCC businesses. From $39/month. Zero commission. Arabic and English."/>
+<title>Zenda — More clients. Less admin. Grow on autopilot.</title>
+<meta name="description" content="The UAE platform that fills your calendar, cuts no-shows, and handles your marketing. From $49/month."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --night:#0a0d14;--night2:#0f1420;--night3:#151b2e;--night4:#1d2540;
-  --coral:#ff4d2e;--coral2:#ff6b4a;--coral3:rgba(255,77,46,.12);--coral4:rgba(255,77,46,.06);
-  --sky:#e8eeff;--sky2:#f0f3ff;--sky3:rgba(232,238,255,.06);
-  --ink:#0a0d14;--ink2:#1d2540;
-  --white:#ffffff;--off:#fafbff;
-  --dim:#8892b0;--dim2:#4a5578;--dim3:rgba(136,146,176,.15);
-  --gold:#f5c842;--gold2:rgba(245,200,66,.1);
-  --green:#00d084;--green2:rgba(0,208,132,.1);
-  --line:rgba(232,238,255,.08);--line2:rgba(232,238,255,.04);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--night);color:var(--sky);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.65;overflow-x:hidden}
-.sora{font-family:'Sora',sans-serif}
-a{text-decoration:none;color:inherit}
-
-/* GRAIN OVERLAY */
-body::before{content:'';position:fixed;inset:0;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
-
-/* NAV */
-nav{position:sticky;top:0;z-index:900;height:66px;background:rgba(10,13,20,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 2rem;position:relative;z-index:2}
-.nav-inner{max-width:1260px;margin:0 auto;width:100%;display:flex;align-items:center;gap:40px}
-.logo{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none}
-.logo-mark{width:36px;height:36px;background:var(--coral);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:white;letter-spacing:-.02em;position:relative;overflow:hidden}
-.logo-mark::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.25),transparent 60%)}
-.logo-name{font-family:'Sora',sans-serif;font-weight:800;font-size:20px;color:var(--white);letter-spacing:-.03em}
-.logo-name em{color:var(--coral);font-style:normal}
-.nav-links{display:flex;gap:2px}
-.nl{padding:7px 15px;font-size:14px;font-weight:500;color:var(--dim);border-radius:8px;cursor:pointer;transition:all .2s;border:none;background:transparent;font-family:inherit}
-.nl:hover{color:var(--sky);background:var(--sky3)}
-.nav-r{margin-left:auto;display:flex;align-items:center;gap:8px}
-.nav-login{padding:9px 18px;font-size:13px;font-weight:600;color:var(--sky);border:1px solid var(--dim3);border-radius:8px;cursor:pointer;background:transparent;font-family:inherit;transition:all .2s;letter-spacing:.01em}
-.nav-login:hover{border-color:rgba(232,238,255,.25);color:white}
-.nav-cta{padding:9px 20px;font-size:13px;font-weight:700;color:white;background:var(--coral);border:none;border-radius:8px;cursor:pointer;font-family:inherit;transition:all .2s;letter-spacing:.01em}
-.nav-cta:hover{background:var(--coral2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(255,77,46,.3)}
-@media(max-width:768px){.nav-links{display:none}.nav-login{display:none}}
-
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 2rem 80px;position:relative;overflow:hidden}
-.hero-glow{position:absolute;top:10%;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(255,77,46,.08) 0%,rgba(255,77,46,.03) 40%,transparent 70%);pointer-events:none}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(232,238,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(232,238,255,.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black,transparent)}
-.hero-inner{max-width:900px;position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,77,46,.08);border:1px solid rgba(255,77,46,.2);color:var(--coral2);padding:7px 16px;border-radius:100px;font-size:12px;font-weight:700;margin-bottom:32px;letter-spacing:.06em;text-transform:uppercase}
-.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0}
-@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,208,132,.5)}50%{opacity:.6;box-shadow:0 0 0 8px rgba(0,208,132,0)}}
-h1{font-family:'Sora',sans-serif;font-size:clamp(42px,7vw,88px);font-weight:800;line-height:.95;letter-spacing:-.04em;color:var(--white);margin-bottom:26px}
-h1 .coral{color:var(--coral)}
-h1 .outline{-webkit-text-stroke:1.5px rgba(232,238,255,.25);color:transparent}
-.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--dim);max-width:580px;margin:0 auto 14px;line-height:1.65;font-weight:400}
-.hero-price{font-size:15px;color:var(--dim2);margin-bottom:36px}
-.hero-price strong{color:var(--sky);font-weight:700}
-.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
-.btn-p{padding:15px 30px;background:var(--coral);color:white;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:all .25s;font-family:inherit;display:inline-flex;align-items:center;gap:8px;letter-spacing:.01em}
-.btn-p:hover{background:var(--coral2);transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,77,46,.3)}
-.btn-s{padding:15px 30px;background:var(--sky3);color:var(--sky);border:1px solid var(--line);border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:all .25s;font-family:inherit}
-.btn-s:hover{background:rgba(232,238,255,.1);border-color:rgba(232,238,255,.2)}
-.hero-trust{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:13px;color:var(--dim)}
-.ht{display:flex;align-items:center;gap:6px}
-.ht::before{content:'✓';color:var(--green);font-weight:700;font-size:12px}
-
-/* HERO DASHBOARD MOCKUP */
-.hero-mockup{margin-top:64px;position:relative;max-width:1000px;margin-left:auto;margin-right:auto;animation:float 6s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.mock-shell{background:var(--night2);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 0 1px var(--line),inset 0 1px 0 rgba(232,238,255,.06)}
-.mock-titlebar{background:var(--night3);padding:13px 18px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line)}
-.mock-dot{width:11px;height:11px;border-radius:50%}
-.mock-url{flex:1;background:var(--night4);border-radius:6px;padding:5px 14px;font-size:11px;color:var(--dim2);margin:0 14px;border:1px solid var(--line);text-align:center}
-.mock-body{display:grid;grid-template-columns:200px 1fr;height:320px}
-.mock-sb{background:var(--night3);border-right:1px solid var(--line);padding:16px 10px;display:flex;flex-direction:column;gap:3px}
-.mock-sb-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:white;padding:8px 10px;margin-bottom:12px;letter-spacing:-.02em}
-.mock-sb-logo em{color:var(--coral);font-style:normal}
-.msb-item{padding:8px 10px;border-radius:7px;font-size:12px;color:var(--dim);display:flex;align-items:center;gap:8px;transition:all .2s}
-.msb-item.active{background:var(--coral3);color:var(--coral2)}
-.msb-icon{font-size:13px;width:16px;flex-shrink:0}
-.mock-main{padding:20px;background:var(--night);display:flex;flex-direction:column;gap:14px;overflow:hidden}
-.mm-welcome{font-family:'Sora',sans-serif;font-size:16px;font-weight:700;color:white;margin-bottom:2px}
-.mm-sub{font-size:12px;color:var(--dim)}
-.mm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.mm-stat{background:var(--night3);border:1px solid var(--line);border-radius:10px;padding:12px}
-.mm-stat-n{font-family:'Sora',sans-serif;font-size:22px;font-weight:800;line-height:1;margin-bottom:3px;color:white}
-.mm-stat-l{font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:.07em}
-.mm-feed{background:var(--night3);border:1px solid var(--line);border-radius:10px;padding:13px;flex:1}
-.mf-title{font-size:10px;font-weight:700;color:var(--dim2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
-.mf-item{display:flex;align-items:center;gap:9px;padding:6px 0;border-bottom:1px solid var(--line2);font-size:11px;color:var(--dim)}
-.mf-item:last-child{border-bottom:none}
-.mf-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.mf-pill{margin-left:auto;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;white-space:nowrap}
-
-/* STATS TICKER */
-.ticker{background:var(--coral);padding:11px 0;overflow:hidden;white-space:nowrap}
-.ticker-inner{display:inline-flex;gap:48px;animation:ticker 28s linear infinite}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.ti{font-size:12px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:12px}
-.ti::before{content:'✦';font-size:9px;opacity:.6}
-
-/* SECTIONS */
-.section{padding:96px 2rem;position:relative;z-index:1}
-.wrap{max-width:1260px;margin:0 auto}
-.eyebrow{font-size:11px;font-weight:700;color:var(--coral);text-transform:uppercase;letter-spacing:.14em;margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.eyebrow::before{content:'';width:24px;height:1.5px;background:var(--coral);flex-shrink:0}
-h2{font-family:'Sora',sans-serif;font-size:clamp(30px,4.5vw,54px);font-weight:800;line-height:1.0;letter-spacing:-.035em;margin-bottom:14px;color:var(--white)}
+:root{--bg:#07080f;--bg2:#0c0f1c;--bg3:#111628;--bg4:#181e30;--coral:#ff4d2e;--coral2:#ff6b4a;--coral3:rgba(255,77,46,.1);--sky:#d8e2ff;--dim:#6070a0;--dim2:#384060;--green:#00c87a;--green2:rgba(0,200,122,.1);--gold:#f0b429;--gold2:rgba(240,180,41,.08);--line:rgba(216,226,255,.07);--line2:rgba(216,226,255,.04)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--sky);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden}
+.urgency{background:linear-gradient(90deg,#b33520,var(--coral),#b33520);padding:9px 2rem;text-align:center;font-size:13px;font-weight:600;color:white}
+nav{position:sticky;top:0;z-index:900;background:rgba(7,8,15,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:0 2rem;height:60px;display:flex;align-items:center}
+.nw{max-width:1180px;margin:0 auto;width:100%;display:flex;align-items:center;gap:24px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.lb{width:32px;height:32px;background:var(--coral);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:900;font-size:13px;color:white}
+.lt{font-family:'Sora',sans-serif;font-weight:800;font-size:18px;color:white;letter-spacing:-.03em}
+.lt em{color:var(--coral);font-style:normal}
+.nlinks{display:flex;gap:2px}
+.nl{padding:7px 12px;font-size:13px;color:var(--dim);border-radius:6px;cursor:pointer;border:none;background:transparent;font-family:inherit}
+.nl:hover{color:var(--sky)}
+.nright{margin-left:auto;display:flex;gap:8px}
+.nlogin{padding:8px 15px;font-size:13px;color:var(--sky);border:1px solid var(--line);border-radius:7px;cursor:pointer;background:transparent;font-family:inherit}
+.nlogin:hover{border-color:var(--coral);color:var(--coral)}
+.ncta{padding:9px 18px;font-size:13px;font-weight:700;color:white;background:var(--coral);border:none;border-radius:7px;cursor:pointer;font-family:inherit}
+.ncta:hover{background:var(--coral2)}
+@media(max-width:768px){.nlinks{display:none}.nlogin{display:none}}
+.hero{padding:64px 2rem 52px;text-align:center;overflow:hidden;position:relative}
+.hglow{position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse,rgba(255,77,46,.07),transparent 70%);pointer-events:none;z-index:0}
+.hi{max-width:800px;margin:0 auto;position:relative;z-index:1}
+.hbadge{display:inline-flex;align-items:center;gap:7px;background:var(--green2);border:1px solid rgba(0,200,122,.2);color:var(--green);padding:6px 14px;border-radius:100px;font-size:12px;font-weight:700;margin-bottom:22px;text-transform:uppercase;letter-spacing:.05em}
+.ldot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,200,122,.5)}50%{box-shadow:0 0 0 7px rgba(0,200,122,0)}}
+h1{font-family:'Sora',sans-serif;font-size:clamp(36px,6.5vw,72px);font-weight:900;line-height:.95;letter-spacing:-.04em;color:white;margin-bottom:18px}
+h1 .c{color:var(--coral)}h1 .g{-webkit-text-stroke:1.5px rgba(216,226,255,.18);color:transparent}
+.hsub{font-size:clamp(15px,1.8vw,18px);color:var(--dim);max-width:540px;margin:0 auto 28px;line-height:1.7}
+.hbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.btnp{padding:14px 28px;background:var(--coral);color:white;border:none;border-radius:9px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .22s}
+.btnp:hover{background:var(--coral2);transform:translateY(-2px);box-shadow:0 12px 36px rgba(255,77,46,.3)}
+.btns{padding:14px 26px;background:rgba(216,226,255,.05);color:var(--sky);border:1px solid var(--line);border-radius:9px;font-size:14px;cursor:pointer;font-family:inherit;transition:all .22s}
+.btns:hover{border-color:rgba(255,77,46,.3);color:var(--coral)}
+.htrust{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-size:13px;color:var(--dim)}
+.ti::before{content:'✓ ';color:var(--green);font-weight:700}
+.statsbar{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.si{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+.st{padding:18px 12px;text-align:center;border-right:1px solid var(--line)}
+.st:last-child{border-right:none}
+.sn{font-family:'Sora',sans-serif;font-size:24px;font-weight:900;color:white;line-height:1;margin-bottom:3px}
+.sl{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.07em}
+.section{padding:64px 2rem}.wrap{max-width:1180px;margin:0 auto}
+.ey{font-size:11px;font-weight:700;color:var(--coral);text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.ey::before{content:'';width:18px;height:1.5px;background:var(--coral);flex-shrink:0}
+h2{font-family:'Sora',sans-serif;font-size:clamp(26px,3.8vw,44px);font-weight:900;letter-spacing:-.035em;line-height:1.0;margin-bottom:12px;color:white}
 h2 em{color:var(--coral);font-style:normal}
-h2 .dim{color:var(--dim);-webkit-text-stroke:1px var(--dim2);color:transparent}
-.ssub{font-size:17px;color:var(--dim);max-width:560px;margin-bottom:52px;line-height:1.65;font-weight:400}
-
-/* PHASES */
-.phases-bg{background:var(--night2)}
-.phases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-radius:18px;overflow:hidden}
-@media(max-width:760px){.phases-grid{grid-template-columns:1fr}}
-.phase-card{background:var(--night2);padding:36px 30px;position:relative;transition:background .3s}
-.phase-card.current{background:var(--night3)}
-.phase-card.current::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--coral),var(--coral2))}
-.pc-num{font-family:'Sora',sans-serif;font-size:56px;font-weight:800;color:rgba(255,255,255,.03);line-height:1;margin-bottom:14px;letter-spacing:-.04em}
-.pc-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:4px 12px;border-radius:100px;margin-bottom:16px}
-.pc-tag.now{background:rgba(255,77,46,.12);color:var(--coral2);border:1px solid rgba(255,77,46,.2)}
-.pc-tag.soon{background:var(--gold2);color:var(--gold);border:1px solid rgba(245,200,66,.2)}
-.pc-tag.future{background:var(--sky3);color:var(--dim2);border:1px solid var(--line)}
-.pc-title{font-family:'Sora',sans-serif;font-size:20px;font-weight:700;color:white;margin-bottom:8px;letter-spacing:-.02em}
-.pc-sub{font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:20px}
-.pc-list{list-style:none;display:flex;flex-direction:column;gap:7px}
-.pc-list li{font-size:13px;color:var(--dim);display:flex;gap:9px;align-items:flex-start}
-.pc-list li::before{content:'·';color:var(--dim2);flex-shrink:0;font-size:16px;line-height:1.2}
-.pc-list li.on{color:rgba(232,238,255,.75)}
-.pc-list li.on::before{content:'✓';color:var(--green);font-size:12px;margin-top:1px}
-
-/* HOW */
-.how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-radius:16px;overflow:hidden}
-@media(max-width:800px){.how-steps{grid-template-columns:1fr 1fr}}
-.hs{background:var(--night2);padding:30px 24px;transition:background .25s;position:relative}
-.hs:hover{background:var(--night3)}
-.hs-n{font-family:'Sora',sans-serif;font-size:10px;font-weight:700;color:var(--coral);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px}
-.hs-icon{width:46px;height:46px;border-radius:12px;background:var(--coral3);border:1px solid rgba(255,77,46,.15);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px}
-.hs h3{font-family:'Sora',sans-serif;font-size:17px;font-weight:700;color:white;margin-bottom:7px;letter-spacing:-.02em}
-.hs p{font-size:13px;color:var(--dim);line-height:1.6}
-.hs-time{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:var(--coral);background:var(--coral3);padding:3px 9px;border-radius:4px;letter-spacing:.04em}
-
-/* FEATURES */
-.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--line);border-radius:16px;overflow:hidden}
-.fc{background:var(--night);padding:28px;transition:background .25s}
-.fc:hover{background:var(--night2)}
-.fc-icon{width:46px;height:46px;border-radius:12px;background:var(--coral3);border:1px solid rgba(255,77,46,.12);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px}
-.fc h3{font-family:'Sora',sans-serif;font-size:17px;font-weight:700;color:white;margin-bottom:6px;letter-spacing:-.02em}
-.fc p{font-size:13px;color:var(--dim);line-height:1.6}
-.fc-tag{display:inline-block;margin-top:12px;font-size:10px;font-weight:700;color:var(--coral);background:var(--coral3);padding:3px 9px;border-radius:4px;text-transform:uppercase;letter-spacing:.07em}
-
-/* NICHES */
-.niches-bg{background:var(--night2)}
-.niche-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-.nc{background:var(--night3);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .28s;position:relative}
-.nc:hover{border-color:rgba(255,77,46,.3);transform:translateY(-4px);box-shadow:0 20px 48px rgba(0,0,0,.4)}
-.nc-img{height:150px;position:relative;overflow:hidden}
-.nc-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;filter:brightness(.7)}
-.nc:hover .nc-img img{transform:scale(1.06);filter:brightness(.85)}
-.nc-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,var(--night3) 100%)}
-.nc-badge{position:absolute;top:10px;right:10px;background:rgba(10,13,20,.8);backdrop-filter:blur(8px);color:var(--coral2);padding:3px 9px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;border:1px solid rgba(255,77,46,.2)}
-.nc-body{padding:18px}
-.nc-name{font-family:'Sora',sans-serif;font-size:18px;font-weight:700;color:white;margin-bottom:5px;letter-spacing:-.02em}
-.nc-desc{font-size:12px;color:var(--dim);line-height:1.5;margin-bottom:12px}
-.nc-price{font-family:'Sora',sans-serif;font-size:20px;font-weight:800;color:var(--coral);letter-spacing:-.02em}
-.nc-price small{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;color:var(--dim);font-weight:400}
-.nc-cta{width:100%;margin-top:12px;padding:10px;background:var(--coral);color:white;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;letter-spacing:.01em}
-.nc-cta:hover{background:var(--coral2)}
-
-/* PRICING */
-.price-section{background:var(--night)}
-.period-tabs{display:flex;background:var(--night2);border:1px solid var(--line);border-radius:10px;padding:4px;width:fit-content;margin-bottom:44px}
-.pt{padding:9px 22px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;color:var(--dim);background:transparent;border:none;font-family:inherit}
-.pt.active{background:var(--coral);color:white;box-shadow:0 3px 12px rgba(255,77,46,.25)}
-.save-pill{font-size:10px;font-weight:700;background:var(--gold2);color:var(--gold);padding:2px 7px;border-radius:3px;margin-left:5px}
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.plan{background:var(--night2);border:1px solid var(--line);border-radius:16px;padding:30px 26px;display:flex;flex-direction:column;transition:all .28s;position:relative}
-.plan:hover{border-color:rgba(255,77,46,.25);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.35)}
-.plan.pop{border-color:var(--coral);background:var(--coral)}
-.plan-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--ink);padding:4px 14px;border-radius:100px;font-size:11px;font-weight:800;white-space:nowrap;letter-spacing:.04em}
-.plan-name{font-family:'Sora',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--dim);margin-bottom:5px}
-.plan.pop .plan-name{color:rgba(255,255,255,.6)}
-.plan-tagline{font-size:13px;color:var(--dim);margin-bottom:20px;min-height:36px;line-height:1.5}
-.plan.pop .plan-tagline{color:rgba(255,255,255,.65)}
-.plan-price{font-family:'Sora',sans-serif;font-size:50px;font-weight:800;letter-spacing:-.04em;color:white;line-height:1;margin-bottom:3px}
-.plan.pop .plan-price{color:white}
-.plan-per{font-size:14px;color:var(--dim);margin-bottom:5px}
-.plan.pop .plan-per{color:rgba(255,255,255,.55)}
-.plan-note{font-size:12px;color:var(--green);font-weight:600;margin-bottom:22px;min-height:18px}
-.plan.pop .plan-note{color:rgba(255,255,255,.65)}
-.plan-feats{list-style:none;flex:1;display:flex;flex-direction:column;gap:0;margin-bottom:24px}
-.plan-feats li{padding:9px 0;font-size:13px;display:flex;gap:9px;align-items:flex-start;border-bottom:1px solid var(--line2);color:rgba(232,238,255,.7)}
-.plan.pop .plan-feats li{border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8)}
-.plan-feats li:last-child{border-bottom:none}
-.plan-feats li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;font-size:12px;margin-top:1px}
-.plan.pop .plan-feats li::before{color:rgba(255,255,255,.6)}
-.plan-feats li.no{color:var(--dim2)}
-.plan-feats li.no::before{content:'—';color:var(--dim2)}
-.plan-cta{padding:13px;background:var(--coral);color:white;border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;letter-spacing:.02em}
-.plan-cta:hover{background:var(--coral2)}
-.plan.pop .plan-cta{background:white;color:var(--coral)}
-.plan.pop .plan-cta:hover{background:rgba(255,255,255,.92)}
-.sms-note{background:var(--night2);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-top:20px;display:flex;gap:14px;align-items:flex-start}
-.sms-note-icon{font-size:18px;flex-shrink:0;margin-top:1px}
-.sms-note-title{font-size:14px;font-weight:700;color:var(--sky);margin-bottom:4px}
-.sms-note-body{font-size:13px;color:var(--dim);line-height:1.6}
-.sms-note-body strong{color:var(--sky)}
-
-/* COMPARISON */
-.vs-section{background:var(--night2)}
-.vs-table{background:var(--night3);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.vs-head{display:grid;grid-template-columns:2.2fr 1fr 1fr;background:var(--night4);border-bottom:1px solid var(--line)}
-.vsh{padding:14px 20px;font-size:11px;font-weight:700;color:var(--dim2);text-transform:uppercase;letter-spacing:.09em}
-.vsh.us{color:var(--coral)}
-.vs-row{display:grid;grid-template-columns:2.2fr 1fr 1fr;border-bottom:1px solid var(--line2);transition:background .15s}
-.vs-row:last-child{border-bottom:none}
-.vs-row:hover{background:rgba(232,238,255,.02)}
-.vc{padding:12px 20px;font-size:13px;color:rgba(232,238,255,.65);display:flex;align-items:center}
-.vc.us{background:rgba(255,77,46,.04)}
-.win{color:var(--green);font-weight:600}.lose{color:var(--dim2)}
-.check{color:var(--green);font-size:15px}.cross{color:var(--dim2);font-size:14px}
-
-/* TESTIMONIALS */
-.testi-section{background:var(--night)}
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
-.testi{background:var(--night2);border:1px solid var(--line);border-radius:16px;padding:28px;transition:all .28s;position:relative;overflow:hidden}
-.testi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--coral),transparent);opacity:0;transition:opacity .3s}
-.testi:hover{border-color:rgba(255,77,46,.2);transform:translateY(-3px)}.testi:hover::before{opacity:1}
-.testi-stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:14px}
-.testi-text{font-size:14px;color:var(--dim);line-height:1.75;margin-bottom:20px;font-style:italic}
-.testi-author{display:flex;align-items:center;gap:10px}
-.testi-av{width:38px;height:38px;border-radius:50%;background:var(--coral3);border:1px solid rgba(255,77,46,.2);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:var(--coral);flex-shrink:0}
-.testi-name{font-size:13px;font-weight:700;color:white}
-.testi-role{font-size:11px;color:var(--dim)}
-
-/* FAQ */
-.faq-section{background:var(--night2)}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:760px){.faq-grid{grid-template-columns:1fr}}
-.faq-item{background:var(--night3);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.faq-item details p{padding:0 20px 18px;font-size:13px;color:var(--dim);line-height:1.75;border-top:1px solid var(--line2)}
-.faq-item summary{padding:18px 20px;font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--sky);transition:color .2s}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:'+';font-size:20px;color:var(--coral);flex-shrink:0;transition:transform .2s;line-height:1}
-.faq-item details[open] summary::after{transform:rotate(45deg)}
-.faq-item details[open] summary{color:var(--coral2)}
-
-/* TERMS VIEW */
-.tcs-wrap{max-width:800px;margin:0 auto;padding:96px 2rem 60px}
-.tcs-h1{font-family:'Sora',sans-serif;font-size:42px;font-weight:800;letter-spacing:-.03em;color:white;margin-bottom:8px}
-.tcs-date{font-size:13px;color:var(--dim);margin-bottom:44px}
-.tcs-section{margin-bottom:32px}
-.tcs-h2{font-family:'Sora',sans-serif;font-size:18px;font-weight:700;color:white;margin-bottom:10px;letter-spacing:-.02em}
-.tcs-p{font-size:14px;color:var(--dim);line-height:1.8}
-.tcs-highlight{background:var(--coral3);border:1px solid rgba(255,77,46,.2);border-radius:10px;padding:16px 18px;margin:14px 0;font-size:13px;color:var(--coral2);line-height:1.7}
-
-/* FINAL CTA */
-.final{position:relative;overflow:hidden;padding:100px 2rem;text-align:center;background:var(--night)}
-.final-glow{position:absolute;bottom:-100px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(255,77,46,.1),transparent 70%);pointer-events:none}
-.final-content{position:relative;z-index:1;max-width:740px;margin:0 auto}
-.final h2{font-family:'Sora',sans-serif;font-size:clamp(38px,6vw,72px);font-weight:800;letter-spacing:-.04em;color:white;line-height:.95;margin-bottom:18px}
-.final h2 em{color:var(--coral);font-style:normal}
-.final p{font-size:18px;color:var(--dim);margin-bottom:38px}
-.final-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-outline{padding:15px 30px;background:transparent;color:rgba(232,238,255,.7);border:1px solid var(--line);border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
-.btn-outline:hover{border-color:rgba(232,238,255,.3);color:white}
-
+.ssub{font-size:16px;color:var(--dim);max-width:500px;margin-bottom:38px;line-height:1.65}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-radius:14px;overflow:hidden}
+@media(max-width:760px){.how-grid{grid-template-columns:1fr 1fr}}
+.hstep{background:var(--bg2);padding:26px 20px;transition:background .2s;position:relative;overflow:hidden}
+.hstep::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--coral),transparent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.hstep:hover{background:var(--bg3)}.hstep:hover::after{transform:scaleX(1)}
+.hsn{font-size:10px;font-weight:700;color:var(--coral);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+.hsi{font-size:24px;margin-bottom:10px}
+.hstep h3{font-family:'Sora',sans-serif;font-size:15px;font-weight:700;color:white;margin-bottom:5px;letter-spacing:-.02em}
+.hstep p{font-size:12px;color:var(--dim);line-height:1.55}
+.hresult{display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:var(--green);background:var(--green2);padding:4px 10px;border-radius:5px}
+.ngrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:8px}
+.nc{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:17px 13px;cursor:pointer;transition:all .25s;text-align:center;position:relative}
+.nc:hover{border-color:rgba(255,77,46,.35);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.4)}
+.nc-hot{position:absolute;top:-8px;right:12px;background:var(--coral);color:white;font-size:9px;font-weight:800;padding:2px 7px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase}
+.nce{font-size:26px;margin-bottom:7px}.ncn{font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:white;margin-bottom:3px}
+.ncd{font-size:11px;color:var(--dim);margin-bottom:9px;line-height:1.4}
+.ncp{font-family:'Sora',sans-serif;font-size:13px;font-weight:800;color:var(--coral);margin-bottom:7px}
+.ncbtn{width:100%;padding:8px;background:var(--coral);color:white;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit}
+.ncbtn:hover{background:var(--coral2)}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.results-grid{grid-template-columns:1fr}}
+.rcard{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:24px;position:relative;overflow:hidden;transition:all .25s}
+.rcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--coral),var(--coral2));opacity:0;transition:opacity .3s}
+.rcard:hover{border-color:rgba(255,77,46,.2)}.rcard:hover::before{opacity:1}
+.rc-metric{font-family:'Sora',sans-serif;font-size:42px;font-weight:900;color:var(--coral);letter-spacing:-.03em;line-height:1;margin-bottom:4px}
+.rc-label{font-size:13px;font-weight:700;color:white;margin-bottom:8px}
+.rc-story{font-size:12px;color:var(--dim);line-height:1.65;margin-bottom:14px}
+.rc-biz{display:flex;align-items:center;gap:8px}
+.rc-av{width:30px;height:30px;border-radius:50%;background:var(--coral3);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:11px;color:var(--coral);flex-shrink:0}
+.rc-name{font-size:12px;font-weight:700;color:white}.rc-loc{font-size:11px;color:var(--dim)}
+.roibox{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:28px;max-width:720px}
+.rpills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.rp{padding:7px 13px;border:1px solid var(--line);border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--dim);font-family:inherit;transition:all .2s}
+.rp:hover{border-color:var(--coral);color:var(--coral)}.rp.active{background:var(--coral);color:white;border-color:var(--coral)}
+.rdesc{background:var(--coral3);border:1px solid rgba(255,77,46,.15);border-radius:8px;padding:10px 13px;font-size:13px;color:var(--coral2);margin-bottom:16px;line-height:1.6}
+.rinputs{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:18px}
+@media(max-width:520px){.rinputs{grid-template-columns:1fr}}
+.rl{display:block;font-size:10px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
+.ri{width:100%;padding:11px 12px;background:var(--bg3);border:1px solid var(--line);border-radius:8px;color:white;font-size:17px;font-family:'Sora',sans-serif;font-weight:700;outline:none;transition:border-color .2s}
+.ri:focus{border-color:var(--coral)}
+.rres{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.rrc{border-radius:10px;padding:14px;text-align:center}
+.rrr{background:rgba(255,77,46,.08);border:1px solid rgba(255,77,46,.15)}
+.rrg{background:rgba(0,200,122,.06);border:1px solid rgba(0,200,122,.15)}
+.rro{background:rgba(240,180,41,.06);border:1px solid rgba(240,180,41,.15)}
+.rrn{font-family:'Sora',sans-serif;font-size:22px;font-weight:900;line-height:1;margin-bottom:3px}
+.rrl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.rtxt{font-size:13px;color:var(--dim);line-height:1.7;padding:11px 13px;background:var(--bg3);border-radius:8px;margin-bottom:14px}
+.vstable{background:var(--bg2);border:1px solid var(--line);border-radius:13px;overflow:hidden}
+.vsh{display:grid;grid-template-columns:2fr 1fr 1fr;background:var(--bg3);border-bottom:1px solid var(--line)}
+.vshc{padding:11px 15px;font-size:10px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+.vshc.ou{color:var(--coral)}
+.vsr{display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid var(--line2)}
+.vsr:last-child{border-bottom:none}.vsr:hover{background:rgba(216,226,255,.015)}
+.vc{padding:10px 15px;font-size:13px;color:rgba(216,226,255,.65);display:flex;align-items:center}
+.vc.ou{background:rgba(255,77,46,.03)}.vw{color:var(--green);font-weight:600}.vl{color:var(--dim2)}
+.final{background:var(--bg2);border-top:1px solid var(--line);padding:64px 2rem;text-align:center}
+footer{background:var(--bg);border-top:1px solid var(--line);padding:20px 2rem}
+.fi{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.flogo{font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:rgba(216,226,255,.2);letter-spacing:-.03em}
+.flogo em{color:rgba(255,77,46,.3);font-style:normal}
+.flinks{display:flex;gap:16px}
+.flinks a{color:rgba(216,226,255,.18);font-size:13px;cursor:pointer;text-decoration:none;transition:color .2s}
+.flinks a:hover{color:rgba(216,226,255,.55)}
+/* DEMO */
+.dnpills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:22px}
+.dnp{padding:8px 16px;border:1.5px solid var(--line);border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--dim);font-family:inherit;transition:all .2s}
+.dnp:hover{border-color:var(--coral);color:var(--coral)}.dnp.active{background:var(--coral);color:white;border-color:var(--coral)}
+.dlayout{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
+@media(max-width:800px){.dlayout{grid-template-columns:1fr}}
+.dphone{background:var(--bg3);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.5)}
+.dtbar{background:var(--bg4);border-bottom:1px solid var(--line);padding:10px 14px;display:flex;align-items:center;gap:7px}
+.ddots{display:flex;gap:5px}.ddot{width:9px;height:9px;border-radius:50%}
+.durlbar{flex:1;background:var(--bg3);border-radius:5px;padding:5px 10px;font-size:10px;color:var(--dim);font-family:monospace;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dlangbtn{padding:5px 10px;border:1px solid var(--line);border-radius:5px;background:transparent;font-family:inherit;font-size:10px;font-weight:700;color:var(--dim);cursor:pointer;flex-shrink:0;transition:all .2s}
+.dlangbtn:hover{border-color:var(--coral);color:var(--coral)}
+.dbody{padding:16px}
+.dbizhead{display:flex;align-items:center;gap:9px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.dbizav{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:900;font-size:14px;color:white;flex-shrink:0}
+.dbizname{font-family:'Sora',sans-serif;font-size:14px;font-weight:700;color:white}
+.dbizstatus{font-size:10px;color:var(--green);display:flex;align-items:center;gap:4px}
+.dbizstatus::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green);display:inline-block}
+.dstepnav{display:flex;background:var(--bg4);border-radius:8px;overflow:hidden;border:1px solid var(--line);margin-bottom:14px}
+.dsn{flex:1;padding:7px 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim);cursor:pointer;border:none;background:transparent;font-family:inherit;transition:all .2s}
+.dsn.a{background:var(--coral);color:white}
+.dpanel{display:none}.dpanel.a{display:block}
+.dseclbl{font-size:10px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px}
+.dsvc{background:var(--bg2);border:1.5px solid var(--line);border-radius:9px;padding:11px 13px;margin-bottom:6px;cursor:pointer;transition:all .2s;display:flex;justify-content:space-between;align-items:center}
+.dsvc:hover{border-color:rgba(255,77,46,.4)}.dsvc.p{border-color:var(--coral);background:var(--coral3)}
+.dsvcl{flex:1}.dsvcn{font-size:12px;font-weight:700;color:white;margin-bottom:1px}.dsvcm{font-size:10px;color:var(--dim)}
+.dsvcpr{font-family:'Sora',sans-serif;font-size:14px;font-weight:800;color:var(--coral);flex-shrink:0;margin-left:8px}
+.dstaffg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px}
+.dstaff{background:var(--bg2);border:1.5px solid var(--line);border-radius:9px;padding:10px 6px;text-align:center;cursor:pointer;transition:all .2s}
+.dstaff:hover{border-color:rgba(255,77,46,.3)}.dstaff.p{border-color:var(--coral);background:var(--coral3)}
+.dstaffav{width:32px;height:32px;border-radius:50%;background:var(--coral3);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:12px;color:var(--coral);margin:0 auto 5px}
+.dstaffn{font-size:10px;font-weight:700;color:white}.dstaffr{font-size:9px;color:var(--dim)}
+.ddateg{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:12px}
+.ddate{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:6px 2px;text-align:center;cursor:pointer;transition:all .2s}
+.ddate:hover{border-color:var(--coral)}.ddate.p{background:var(--coral);border-color:var(--coral)}
+.ddated{font-size:9px;color:var(--dim);margin-bottom:2px}.ddate.p .ddated{color:rgba(255,255,255,.7)}
+.ddaten{font-family:'Sora',sans-serif;font-size:12px;font-weight:700;color:white}
+.dslotsg{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:12px}
+.dslot{background:var(--bg2);border:1.5px solid var(--line);border-radius:6px;padding:7px 3px;text-align:center;font-size:11px;font-weight:600;cursor:pointer;color:var(--dim);transition:all .2s}
+.dslot:hover:not(.t){border-color:var(--coral);color:var(--coral)}.dslot.p{background:var(--coral);color:white;border-color:var(--coral)}
+.dslot.t{background:var(--bg4);color:var(--dim2);cursor:not-allowed;font-size:9px;text-decoration:line-through;opacity:.5}
+.dinp{width:100%;padding:9px 11px;background:var(--bg2);border:1px solid var(--line);border-radius:7px;color:var(--sky);font-size:12px;font-family:inherit;outline:none;margin-bottom:6px;transition:border-color .2s}
+.dinp:focus{border-color:var(--coral)}
+.dconfsum{background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:11px;margin-bottom:10px}
+.dcrow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--line2);font-size:11px}
+.dcrow:last-child{border-bottom:none}.dcl{color:var(--dim)}.dcv{font-weight:600;color:white}
+.dcvpr{font-family:'Sora',sans-serif;font-size:15px;font-weight:900;color:var(--coral)}
+.dbtn{width:100%;padding:10px;background:var(--coral);color:white;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;margin-bottom:5px}
+.dbtn:hover{background:var(--coral2)}.dbtn:disabled{background:var(--dim2);cursor:not-allowed}
+.dbtnG{width:100%;padding:9px;background:transparent;color:var(--sky);border:1px solid var(--line);border-radius:7px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .2s}
+.dbtnG:hover{border-color:var(--coral);color:var(--coral)}
+.dsucc{display:none;text-align:center;padding:12px 0}.dsucc.a{display:block}
+.dsuccI{width:48px;height:48px;background:var(--green2);border:1px solid rgba(0,200,122,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:20px}
+.drem{background:var(--coral3);border:1px solid rgba(255,77,46,.15);border-radius:7px;padding:9px 11px;font-size:10px;color:var(--coral2);margin-bottom:10px;text-align:left;line-height:1.55}
+.dbar{display:flex;flex-direction:column;gap:10px}
+.dsf{background:var(--bg3);border:1px solid var(--line);border-radius:11px;padding:17px;transition:border-color .25s}
+.dsf:hover{border-color:rgba(255,77,46,.2)}
+.dsfH{display:flex;align-items:center;gap:9px;margin-bottom:5px}
+.dsfI{font-size:17px}.dsfT{font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:white;letter-spacing:-.02em}
+.dsfD{font-size:12px;color:var(--dim);line-height:1.6}
+.dsfHL{display:inline-block;margin-top:6px;font-size:10px;font-weight:700;color:var(--green);background:var(--green2);padding:3px 9px;border-radius:4px}
 /* MODAL */
-.overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,13,20,.85);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px}
-.overlay.open{display:flex}
-.modal{background:var(--night2);border:1px solid var(--line);border-radius:20px;width:100%;max-width:500px;max-height:92vh;overflow-y:auto;padding:36px;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.5)}
-.modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;background:var(--night3);border:none;cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;color:var(--dim);transition:all .2s;font-family:inherit}
-.modal-close:hover{background:var(--night4);color:var(--sky)}
-.modal-tag{font-size:11px;font-weight:700;color:var(--coral);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}
-.modal h3{font-family:'Sora',sans-serif;font-size:24px;font-weight:800;letter-spacing:-.03em;margin-bottom:18px;color:white}
-.fg{margin-bottom:13px}
-.fg label{display:block;font-size:11px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
-.fg input,.fg select{width:100%;background:var(--night3);border:1px solid var(--line);border-radius:9px;color:var(--sky);padding:11px 14px;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s}
-.fg input:focus,.fg select:focus{border-color:var(--coral)}
-.fg select option{background:var(--night3)}
-.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:480px){.fg-row{grid-template-columns:1fr}}
-.checkout-btn{width:100%;padding:14px;background:var(--coral);color:white;border:none;border-radius:9px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:4px;letter-spacing:.02em}
-.checkout-btn:hover{background:var(--coral2)}
-.modal-note{text-align:center;font-size:12px;color:var(--dim2);margin-top:12px}
-.success-state{display:none;text-align:center;padding:12px 0}
-.success-state.show{display:block}
-.succ-icon{width:64px;height:64px;background:var(--green2);border:1px solid rgba(0,208,132,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:28px}
-.success-state h3{font-family:'Sora',sans-serif;font-size:26px;font-weight:800;margin-bottom:10px;color:white;letter-spacing:-.03em}
-.success-state p{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:22px}
-.nsteps{background:var(--night3);border-radius:12px;padding:18px;text-align:left}
-.nstep{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:13px;color:var(--dim)}
-.nsn{width:22px;height:22px;background:var(--coral);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:white;font-weight:700;flex-shrink:0;margin-top:1px}
-
-/* DUBAI STRIP */
-.dubai-strip{position:relative;height:240px;overflow:hidden}
-.ds-img{width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:brightness(.45)}
-.ds-overlay{position:absolute;inset:0;background:linear-gradient(180deg,var(--night) 0%,transparent 30%,transparent 65%,var(--night) 100%)}
-.ds-text{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);text-align:center;z-index:2;white-space:nowrap}
-.ds-title{font-family:'Sora',sans-serif;font-size:clamp(22px,3.5vw,40px);font-weight:800;color:white;letter-spacing:-.03em}
-.ds-sub{font-size:12px;color:var(--dim);margin-top:5px;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
-
-/* FOOTER */
-footer{background:var(--night2);border-top:1px solid var(--line);padding:28px 2rem}
-.footer-inner{max-width:1260px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
-.footer-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:18px;color:rgba(232,238,255,.3);letter-spacing:-.02em}
-.footer-logo em{color:rgba(255,77,46,.5);font-style:normal}
-.footer-links{display:flex;gap:20px}
-.footer-links a{color:rgba(232,238,255,.2);font-size:13px;transition:color .2s;text-decoration:none;cursor:pointer}
-.footer-links a:hover{color:rgba(232,238,255,.6)}
-.footer-note{font-size:12px;color:rgba(232,238,255,.12)}
-
-/* VIEWS */
-.view{display:none}.view.active{display:block}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
-.reveal.in{opacity:1;transform:none}
-.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--dim2);border-radius:2px}
-@media(max-width:600px){.section,.phases-bg,.price-section,.vs-section,.testi-section,.faq-section,.final,.niches-bg{padding:60px 1.25rem}nav{padding:0 1.25rem}.hero{padding:80px 1.25rem 60px}}
+.movl{display:none;position:fixed;inset:0;z-index:1000;background:rgba(7,8,15,.97);backdrop-filter:blur(14px);overflow-y:auto;padding:20px}
+.movl.open{display:block}
+.mcont{max-width:960px;margin:20px auto;background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:34px;position:relative}
+.mclose{position:absolute;top:15px;right:15px;width:31px;height:31px;border-radius:50%;background:var(--bg3);border:none;cursor:pointer;font-size:16px;color:var(--dim);display:flex;align-items:center;justify-content:center;font-family:inherit}
+.mclose:hover{color:white}
+.mbiz{font-size:11px;font-weight:700;color:var(--coral);text-transform:uppercase;letter-spacing:.12em;margin-bottom:5px}
+.mhead{font-family:'Sora',sans-serif;font-size:22px;font-weight:900;color:white;letter-spacing:-.03em;margin-bottom:5px}
+.msub{font-size:14px;color:var(--dim);margin-bottom:22px}
+.ptog{display:flex;background:var(--bg3);border-radius:9px;padding:3px;width:fit-content;margin-bottom:26px;border:1px solid var(--line)}
+.pb{padding:9px 20px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;color:var(--dim);background:transparent;border:none;font-family:inherit;transition:all .2s}
+.pb.active{background:var(--coral);color:white}
+.savebadge{font-size:10px;font-weight:700;background:var(--gold2);color:var(--gold);padding:2px 7px;border-radius:3px;margin-left:4px;border:1px solid rgba(240,180,41,.2)}
+.plangrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:22px}
+@media(max-width:620px){.plangrid{grid-template-columns:1fr}}
+.pcard{background:var(--bg3);border:1.5px solid var(--line);border-radius:13px;padding:21px;display:flex;flex-direction:column;position:relative;transition:all .25s}
+.pcard:hover{border-color:rgba(255,77,46,.3);transform:translateY(-2px)}
+.pcard.pop{border-color:var(--coral);background:rgba(255,77,46,.04)}
+.pbadge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--gold);color:#07080f;padding:3px 12px;border-radius:100px;font-size:10px;font-weight:800;white-space:nowrap}
+.pname{font-size:10px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.12em;margin-bottom:3px}
+.ptag{font-size:12px;color:var(--dim);margin-bottom:12px;min-height:30px;line-height:1.45}
+.pprrow{display:flex;align-items:baseline;gap:2px;margin-bottom:2px}
+.ppr{font-family:'Sora',sans-serif;font-size:38px;font-weight:900;color:white;letter-spacing:-.04em;line-height:1}
+.pper{font-size:13px;color:var(--dim)}
+.pnote{font-size:11px;color:var(--green);font-weight:600;margin-bottom:14px;min-height:15px}
+.pfeats{list-style:none;flex:1;display:flex;flex-direction:column;margin-bottom:14px}
+.pfeats li{padding:6px 0;font-size:12px;display:flex;gap:7px;border-bottom:1px solid var(--line2);color:rgba(216,226,255,.7)}
+.pfeats li:last-child{border-bottom:none}
+.pfeats li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;font-size:11px;margin-top:1px}
+.pfeats li.no{color:var(--dim2)}.pfeats li.no::before{content:'—';color:var(--dim2)}
+.pctabtn{padding:11px;background:var(--coral);color:white;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;text-align:center}
+.pctabtn:hover{background:var(--coral2)}
+.mdivider{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--dim);margin:4px 0 16px}
+.mdivider::before,.mdivider::after{content:'';flex:1;height:1px;background:var(--line)}
+.tpgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(172px,1fr));gap:7px}
+.tpcard{background:var(--bg3);border:1.5px solid var(--line);border-radius:11px;padding:13px;cursor:pointer;transition:all .2s}
+.tpcard:hover{border-color:rgba(255,77,46,.3)}.tpcard.sel{border-color:var(--coral);background:var(--coral3)}
+.tpico{font-size:17px;margin-bottom:6px}.tpname{font-size:13px;font-weight:700;color:white;margin-bottom:2px}
+.tpprice{font-size:12px;color:var(--coral);font-weight:600;margin-bottom:3px}.tpdesc{font-size:11px;color:var(--dim);line-height:1.5}
+.tpsum{background:var(--bg3);border:1px solid var(--line);border-radius:9px;padding:11px 14px;font-size:13px;color:var(--sky);margin-top:11px;display:none}
+.tpcta{width:100%;padding:12px;background:var(--coral);color:white;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:11px;transition:background .2s}
+.tpcta:hover{background:var(--coral2)}.tpcta:disabled{background:var(--dim2);cursor:not-allowed}
+/* CHECKOUT */
+.covl{display:none;position:fixed;inset:0;z-index:1001;background:rgba(7,8,15,.98);backdrop-filter:blur(16px);align-items:center;justify-content:center;padding:20px}
+.covl.open{display:flex}
+.cobox{background:var(--bg2);border:1px solid var(--line);border-radius:20px;width:100%;max-width:460px;padding:30px;position:relative;max-height:90vh;overflow-y:auto}
+.coclose{position:absolute;top:13px;right:13px;width:30px;height:30px;border-radius:50%;background:var(--bg3);border:none;cursor:pointer;font-size:16px;color:var(--dim);display:flex;align-items:center;justify-content:center;font-family:inherit}
+.coclose:hover{color:white}
+.cotag{font-size:11px;font-weight:700;color:var(--coral);text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}
+.cohead{font-family:'Sora',sans-serif;font-size:20px;font-weight:900;color:white;letter-spacing:-.03em;margin-bottom:18px}
+.ff{margin-bottom:10px}
+.ff label{display:block;font-size:10px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
+.ff input,.ff select{width:100%;background:var(--bg3);border:1px solid var(--line);border-radius:8px;color:var(--sky);padding:10px 12px;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s}
+.ff input:focus,.ff select:focus{border-color:var(--coral)}
+.ff select option{background:var(--bg3)}.ffrow{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.tcscheck{display:flex;align-items:flex-start;gap:10px;background:var(--bg3);border:1px solid var(--line);border-radius:9px;padding:13px;margin:14px 0;cursor:pointer;transition:border-color .2s}
+.tcscheck:hover{border-color:rgba(255,77,46,.3)}
+.tcscheck input[type=checkbox]{width:16px;height:16px;margin-top:2px;cursor:pointer;accent-color:var(--coral);flex-shrink:0}
+.tcscheckT{font-size:12px;color:var(--dim);line-height:1.65}
+.tcscheckT a{color:var(--coral);cursor:pointer;text-decoration:underline}
+.cosubmit{width:100%;padding:13px;background:var(--dim2);color:rgba(216,226,255,.4);border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:not-allowed;font-family:inherit;transition:all .2s;margin-top:4px}
+.cosubmit.ready{background:var(--coral);color:white;cursor:pointer}
+.cosubmit.ready:hover{background:var(--coral2)}
+.conote{text-align:center;font-size:12px;color:var(--dim2);margin-top:9px}
+.cosucc{display:none;text-align:center;padding:8px 0}.cosucc.show{display:block}
+.cosi{width:52px;height:52px;background:var(--green2);border:1px solid rgba(0,200,122,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 13px;font-size:22px}
+.cost{font-family:'Sora',sans-serif;font-size:20px;font-weight:900;color:white;margin-bottom:8px;letter-spacing:-.03em}
+.coss{background:var(--bg3);border-radius:10px;padding:13px;text-align:left;margin-top:13px}
+.cossi{display:flex;gap:8px;padding:5px 0;font-size:12px;color:var(--dim)}
+.cossc{width:19px;height:19px;background:var(--coral);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:white;font-weight:700;flex-shrink:0}
+.toast{position:fixed;bottom:20px;right:20px;background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:10px 16px;font-size:13px;color:white;transform:translateY(60px);opacity:0;transition:all .3s;z-index:2000;pointer-events:none}
+.toast.show{transform:translateY(0);opacity:1}
+@media(max-width:600px){.section{padding:48px 1.25rem}.hero{padding:52px 1.25rem 44px}nav{padding:0 1.25rem}.si{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <div class="logo" onclick="goHome()">
-      <div class="logo-mark">Z</div>
-      <div class="logo-name">Zen<em>da</em></div>
-    </div>
-    <div class="nav-links">
-      <button class="nl" onclick="navTo('#phases')">Platform</button>
-      <button class="nl" onclick="navTo('#features')">Features</button>
-      <button class="nl" onclick="navTo('#niches')">Industries</button>
-      <button class="nl" onclick="navTo('#pricing')">Pricing</button>
-    </div>
-    <div class="nav-r">
-      <button class="nav-login" onclick="window.open('zenda-app.html','_blank')">Log in</button>
-      <button class="nav-cta" onclick="navTo('#pricing')">Get started →</button>
-    </div>
-  </div>
-</nav>
-
-<!-- HOME VIEW -->
-<div class="view active" id="view-home">
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-inner reveal">
-    <div class="hero-badge"><span class="hero-badge-dot"></span>UAE & GCC · Arabic + English · Zero commission</div>
-    <h1>Run your business.<br><span class="coral">Zenda</span> handles<br>the <span class="outline">rest.</span></h1>
-    <p class="hero-sub">Smart scheduling, automated reminders, and growth tools that save your team hours every day — and keep clients coming back.</p>
-    <div class="hero-price">Everything included · from <strong>$39/month</strong> · cancel anytime</div>
-    <div class="hero-btns">
-      <button class="btn-p" onclick="navTo('#pricing')">Start today — it's $39 →</button>
-      <button class="btn-s" onclick="window.open('zenda-booking.html','_blank')">See booking demo</button>
-    </div>
-    <div class="hero-trust">
-      <div class="ht">Zero commission fees</div>
-      <div class="ht">Live in 20 minutes</div>
-      <div class="ht">Arabic + English</div>
-      <div class="ht">Cancel anytime</div>
-    </div>
-  </div>
-
-  <!-- DASHBOARD MOCKUP -->
-  <div class="hero-mockup reveal d2">
-    <div class="mock-shell">
-      <div class="mock-titlebar">
-        <div class="mock-dot" style="background:#ff5f57"></div>
-        <div class="mock-dot" style="background:#ffbd2e"></div>
-        <div class="mock-dot" style="background:#28c940"></div>
-        <div class="mock-url">app.zenda.ae / dashboard</div>
-      </div>
-      <div class="mock-body">
-        <div class="mock-sb">
-          <div class="mock-sb-logo">Zen<em>da</em></div>
-          <div class="msb-item active"><span class="msb-icon">📊</span>Dashboard</div>
-          <div class="msb-item"><span class="msb-icon">📅</span>Calendar</div>
-          <div class="msb-item"><span class="msb-icon">👥</span>Clients</div>
-          <div class="msb-item"><span class="msb-icon">✂️</span>Services</div>
-          <div class="msb-item"><span class="msb-icon">📈</span>Analytics</div>
-          <div class="msb-item"><span class="msb-icon">⚙️</span>Settings</div>
-        </div>
-        <div class="mock-main">
-          <div><div class="mm-welcome">Good morning, Nour 👋</div><div class="mm-sub">Tuesday, 10 May · 12 appointments today</div></div>
-          <div class="mm-stats">
-            <div class="mm-stat"><div class="mm-stat-n" style="color:var(--coral)">12</div><div class="mm-stat-l">Today</div></div>
-            <div class="mm-stat"><div class="mm-stat-n" style="color:var(--green)">AED 3,400</div><div class="mm-stat-l">Revenue</div></div>
-            <div class="mm-stat"><div class="mm-stat-n">28s</div><div class="mm-stat-l">Avg reply</div></div>
-            <div class="mm-stat"><div class="mm-stat-n">0</div><div class="mm-stat-l">No-shows</div></div>
-          </div>
-          <div class="mm-feed">
-            <div class="mf-title">Live activity</div>
-            <div class="mf-item"><div class="mf-dot" style="background:var(--green)"></div>Sara Al-Mansouri booked Highlights · via link<div class="mf-pill" style="background:var(--green2);color:var(--green)">New</div></div>
-            <div class="mf-item"><div class="mf-dot" style="background:var(--coral)"></div>Reminder sent to Layla · 24h before appointment<div class="mf-pill" style="background:var(--coral3);color:var(--coral2)">Auto</div></div>
-            <div class="mf-item"><div class="mf-dot" style="background:var(--gold)"></div>Maha rescheduled · waitlist notified automatically<div class="mf-pill" style="background:var(--gold2);color:var(--gold)">Auto</div></div>
-            <div class="mf-item"><div class="mf-dot" style="background:var(--green)"></div>5-star Google review responded · automatic<div class="mf-pill" style="background:var(--green2);color:var(--green)">Done</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-inner">
-    <span class="ti">Smart Scheduling</span><span class="ti">Automated Reminders</span><span class="ti">Zero Commission</span><span class="ti">Arabic + English</span><span class="ti">UAE & GCC</span><span class="ti">No-Show Protection</span><span class="ti">Client Management</span><span class="ti">Business Analytics</span><span class="ti">Cancel Anytime</span><span class="ti">Live in 20 Min</span>
-    <span class="ti">Smart Scheduling</span><span class="ti">Automated Reminders</span><span class="ti">Zero Commission</span><span class="ti">Arabic + English</span><span class="ti">UAE & GCC</span><span class="ti">No-Show Protection</span><span class="ti">Client Management</span><span class="ti">Business Analytics</span><span class="ti">Cancel Anytime</span><span class="ti">Live in 20 Min</span>
-  </div>
+<div class="urgency">🚀 UAE businesses are saving AED 4,200+/month with Zenda · Booking + AI tools from $49/month · Zero commission</div>
+<nav><div class="nw">
+<a class="logo" href="#"><div class="lb">Z</div><div class="lt">Zen<em>da</em></div></a>
+<div class="nlinks">
+<button class="nl" onclick="gs('#how')">How it works</button>
+<button class="nl" onclick="gs('#demo')">Live demo</button>
+<button class="nl" onclick="gs('#niches')">Industries</button>
+<button class="nl" onclick="gs('#roi')">ROI</button>
 </div>
-
-<!-- DUBAI STRIP -->
-<div class="dubai-strip">
-  <img class="ds-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1800&q=80&auto=format&fit=crop&crop=bottom" alt="Dubai skyline"/>
-  <div class="ds-overlay"></div>
-  <div class="ds-text">
-    <div class="ds-title">Built for UAE & GCC businesses</div>
-    <div class="ds-sub">Dubai · Abu Dhabi · Riyadh · Doha · Kuwait · Sharjah</div>
-  </div>
+<div class="nright">
+<button class="nlogin" onclick="window.open('zenda-app.html','_blank')">Log in</button>
+<button class="ncta" onclick="openM('general','Your Business','🏪')">Get started →</button>
 </div>
+</div></nav>
 
-<!-- PHASES -->
-<section class="section phases-bg" id="phases">
-  <div class="wrap">
-    <div class="eyebrow reveal">The Zenda platform</div>
-    <h2 class="reveal">Starts simple.<br><em>Scales with you.</em></h2>
-    <p class="ssub reveal">Pay only for what you need today. Zenda grows into a full business OS as you grow.</p>
-    <div class="phases-grid reveal">
-      <div class="phase-card current">
-        <div class="pc-num">01</div>
-        <div class="pc-tag now">Available now</div>
-        <div class="pc-title">Scheduling & Automation</div>
-        <div class="pc-sub">Stop losing clients to missed bookings. Let the system handle everything from booking to reminder to follow-up.</div>
-        <ul class="pc-list">
-          <li class="on">Online booking page (Arabic + English)</li>
-          <li class="on">Automated SMS & email reminders</li>
-          <li class="on">Client database & history</li>
-          <li class="on">Staff scheduling & calendar</li>
-          <li class="on">Analytics dashboard</li>
-          <li class="on">Zero commission on all bookings</li>
-        </ul>
-      </div>
-      <div class="phase-card">
-        <div class="pc-num">02</div>
-        <div class="pc-tag soon">Coming Q3 2026</div>
-        <div class="pc-title">Marketing & Retention</div>
-        <div class="pc-sub">Turn one-time visits into loyal regulars. Fill empty slots automatically with smart campaigns.</div>
-        <ul class="pc-list">
-          <li>WhatsApp broadcast campaigns</li>
-          <li>Loyalty points & rewards</li>
-          <li>Automated review collection</li>
-          <li>Re-booking nudges for lapsed clients</li>
-          <li>Gift vouchers & packages</li>
-          <li>Instagram & WhatsApp booking buttons</li>
-        </ul>
-      </div>
-      <div class="phase-card">
-        <div class="pc-num">03</div>
-        <div class="pc-tag future">Coming 2027</div>
-        <div class="pc-title">Full Business OS</div>
-        <div class="pc-sub">Everything to run a multi-location business from a single dashboard.</div>
-        <ul class="pc-list">
-          <li>Multi-location management</li>
-          <li>POS & inventory</li>
-          <li>Staff payroll & performance</li>
-          <li>AI demand forecasting</li>
-          <li>Franchise tools</li>
-          <li>White-label for agencies</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="section" id="how" style="background:var(--night)">
-  <div class="wrap">
-    <div class="eyebrow reveal">How it works</div>
-    <h2 class="reveal">Live in <em>20 minutes.</em></h2>
-    <p class="ssub reveal">No developer, no agency, no setup fees. If you can fill a form, you can run Zenda.</p>
-    <div class="how-steps reveal">
-      <div class="hs"><div class="hs-n">Step 01</div><div class="hs-icon">🏪</div><h3>Build your profile</h3><p>Add your services, prices, staff, and hours. Your branded booking page appears instantly.</p><span class="hs-time">5 min</span></div>
-      <div class="hs"><div class="hs-n">Step 02</div><div class="hs-icon">🔗</div><h3>Share your link</h3><p>Instagram bio, WhatsApp, Google — one link and clients book themselves around the clock.</p><span class="hs-time">1 min</span></div>
-      <div class="hs"><div class="hs-n">Step 03</div><div class="hs-icon">🤖</div><h3>Reminders fire themselves</h3><p>24h and 2h before every appointment your client gets reminded. No-shows drop 60%.</p><span class="hs-time">Automatic</span></div>
-      <div class="hs"><div class="hs-n">Step 04</div><div class="hs-icon">📈</div><h3>Watch revenue grow</h3><p>More bookings, zero gaps, zero commission. Your dashboard tracks everything live.</p><span class="hs-time">Ongoing</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="section" id="features" style="background:var(--night2)">
-  <div class="wrap">
-    <div class="eyebrow reveal">Everything included</div>
-    <h2 class="reveal">One price.<br><em>No surprises.</em> Ever.</h2>
-    <p class="ssub reveal">Flat monthly subscription. No commission, no per-SMS fees, no hidden charges at month end.</p>
-    <div class="feat-grid reveal">
-      <div class="fc"><div class="fc-icon">📅</div><h3>Online booking page</h3><p>Your branded page, your link, your colors. Clients pick service, staff, and time — 24/7, any device.</p><span class="fc-tag">All plans</span></div>
-      <div class="fc"><div class="fc-icon">🔔</div><h3>Automated reminders</h3><p>SMS and email reminders before every appointment. No-shows drop 60% from week one. Included in your plan.</p><span class="fc-tag">No per-SMS fee</span></div>
-      <div class="fc"><div class="fc-icon">👥</div><h3>Client management</h3><p>Full history, preferences, notes, visit count. Build real long-term relationships that drive repeat revenue.</p><span class="fc-tag">All plans</span></div>
-      <div class="fc"><div class="fc-icon">🌍</div><h3>Native Arabic + English</h3><p>Dashboard, booking page, and reminders built natively bilingual. RTL layout, Gulf Arabic tone. Not a translation.</p><span class="fc-tag">UAE-first</span></div>
-      <div class="fc"><div class="fc-icon">📊</div><h3>Business analytics</h3><p>Revenue, busiest slots, top services, staff performance, retention rate. Data that helps you make better decisions.</p><span class="fc-tag">Growth +</span></div>
-      <div class="fc"><div class="fc-icon">🛡️</div><h3>No-show protection</h3><p>Deposits, card-on-file, smart cancellation rules. Stop losing money to last-minute ghosts forever.</p><span class="fc-tag">Growth +</span></div>
-      <div class="fc"><div class="fc-icon">📱</div><h3>WhatsApp & Instagram booking</h3><p>Share your link anywhere. Clients book from your Instagram bio, WhatsApp, or Google — no phone call needed.</p><span class="fc-tag">All plans</span></div>
-      <div class="fc"><div class="fc-icon">🔄</div><h3>Smart waitlist</h3><p>Cancellation happens → slot opens → waitlist gets notified automatically. Every slot stays filled.</p><span class="fc-tag">Growth +</span></div>
-      <div class="fc"><div class="fc-icon">🎁</div><h3>Loyalty & gift vouchers</h3><p>Built-in loyalty programme with points and vouchers. Keep clients coming back without lifting a finger.</p><span class="fc-tag">Pro plan</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- NICHES -->
-<section class="section niches-bg" id="niches">
-  <div class="wrap">
-    <div class="eyebrow reveal">Industries</div>
-    <h2 class="reveal">Built for <em>your</em> business.</h2>
-    <p class="ssub reveal">Not a generic tool — every industry has the right workflows, services, and terminology built in.</p>
-    <div class="niche-grid reveal">
-      <div class="nc" onclick="openModal('salon','Beauty Salons','$39')"><div class="nc-img"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80&auto=format&fit=crop" alt=""/><div class="nc-overlay"></div><div class="nc-badge">Most popular</div></div><div class="nc-body"><div class="nc-name">Beauty Salons</div><div class="nc-desc">Hair, nails, lashes, brows, makeup. Staff scheduling, service menu, deposits.</div><div class="nc-price">from $39<small>/mo</small></div><button class="nc-cta">Get started →</button></div></div>
-      <div class="nc" onclick="openModal('spa','Spa & Wellness','$39')"><div class="nc-img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80&auto=format&fit=crop" alt=""/><div class="nc-overlay"></div><div class="nc-badge">High value</div></div><div class="nc-body"><div class="nc-name">Spa & Wellness</div><div class="nc-desc">Massages, facials, body treatments. Room allocation, packages, gift vouchers.</div><div class="nc-price">from $39<small>/mo</small></div><button class="nc-cta">Get started →</button></div></div>
-      <div class="nc" onclick="openModal('barber','Barbershops','$39')"><div class="nc-img"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80&auto=format&fit=crop" alt=""/><div class="nc-overlay"></div><div class="nc-badge">Fast-growing</div></div><div class="nc-body"><div class="nc-name">Barbershops</div><div class="nc-desc">Walk-ins plus appointments. Queue management, barber selection, Arabic-first.</div><div class="nc-price">from $39<small>/mo</small></div><button class="nc-cta">Get started →</button></div></div>
-      <div class="nc" onclick="openModal('clinic','Medical Clinics','$49')"><div class="nc-img"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80&auto=format&fit=crop" alt=""/><div class="nc-overlay"></div><div class="nc-badge">Premium</div></div><div class="nc-body"><div class="nc-name">Medical Clinics</div><div class="nc-desc">GP, dental, dermatology. Doctor routing, patient notes, insurance info.</div><div class="nc-price">from $49<small>/mo</small></div><button class="nc-cta">Get started →</button></div></div>
-      <div class="nc" onclick="openModal('medspa','Medical Spas','$49')"><div class="nc-img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80&auto=format&fit=crop" alt=""/><div class="nc-overlay"></div><div class="nc-badge">New</div></div><div class="nc-body"><div class="nc-name">Medical Spas</div><div class="nc-desc">Botox, fillers, laser. Consultation bookings, consent forms, follow-up scheduling.</div><div class="nc-price">from $49<small>/mo</small></div><button class="nc-cta">Get started →</button></div></div>
-      <div class="nc" onclick="openModal('physio','Physiotherapy','$49')"><div class="nc-img"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80&auto=format&fit=crop" alt=""/><div class="nc-overlay"></div></div><div class="nc-body"><div class="nc-name">Physiotherapy</div><div class="nc-desc">Session bookings, treatment plans, recurring appointments, progress notes.</div><div class="nc-price">from $49<small>/mo</small></div><button class="nc-cta">Get started →</button></div></div>
-      <div class="nc" onclick="openModal('gym','Gyms & Personal Training','$39')"><div class="nc-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80&auto=format&fit=crop" alt=""/><div class="nc-overlay"></div></div><div class="nc-body"><div class="nc-name">Gyms & Personal Training</div><div class="nc-desc">Class bookings, PT sessions, membership management, trial conversions.</div><div class="nc-price">from $39<small>/mo</small></div><button class="nc-cta">Get started →</button></div></div>
-      <div class="nc" onclick="openModal('photography','Photography Studios','$39')"><div class="nc-img"><img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=600&q=80&auto=format&fit=crop" alt=""/><div class="nc-overlay"></div><div class="nc-badge">New</div></div><div class="nc-body"><div class="nc-name">Photography Studios</div><div class="nc-desc">Shoot scheduling, package selection, studio allocation, pre-session questionnaires.</div><div class="nc-price">from $39<small>/mo</small></div><button class="nc-cta">Get started →</button></div></div>
-      <div class="nc" onclick="openModal('consultant','Consultants & Coaches','$39')"><div class="nc-img"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&auto=format&fit=crop" alt=""/><div class="nc-overlay"></div><div class="nc-badge">New</div></div><div class="nc-body"><div class="nc-name">Consultants & Coaches</div><div class="nc-desc">Business coaches, nutritionists, life coaches. In-person and online sessions.</div><div class="nc-price">from $39<small>/mo</small></div><button class="nc-cta">Get started →</button></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- DUBAI STRIP 2 -->
-<div class="dubai-strip">
-  <img class="ds-img" src="https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?w=1800&q=80&auto=format&fit=crop" alt="Dubai Business Bay"/>
-  <div class="ds-overlay"></div>
-  <div class="ds-text">
-    <div class="ds-title">Zero commission. Always.</div>
-    <div class="ds-sub">GCC VAT ready · Arabic-first · Trusted across the region</div>
-  </div>
+<section class="hero"><div class="hglow"></div><div class="hi">
+<div class="hbadge"><span class="ldot"></span>Built for UAE & GCC · Arabic + English · 12 Industries</div>
+<h1>More clients.<br>Less <span class="c">admin.</span><br>Grow on <span class="g">autopilot.</span></h1>
+<p class="hsub">Zenda fills your calendar, cuts no-shows, handles your marketing — and gives you AI tools your competitors don't have. All in one subscription.</p>
+<div class="hbtns">
+<button class="btnp" onclick="gs('#niches')">Start growing today →</button>
+<button class="btns" onclick="gs('#demo')">See live demo first</button>
 </div>
-
-<!-- PRICING -->
-<section class="section price-section" id="pricing">
-  <div class="wrap">
-    <div class="eyebrow reveal">Pricing</div>
-    <h2 class="reveal">Simple pricing.<br><em>No hidden costs.</em></h2>
-    <p class="ssub reveal">One flat monthly fee. No commission. SMS reminders included up to 300 bookings/month. Cancel any time.</p>
-    <div class="period-tabs reveal">
-      <button class="pt active" onclick="setPeriod('annual',this)">Annual <span class="save-pill">Save 25%</span></button>
-      <button class="pt" onclick="setPeriod('monthly',this)">Monthly</button>
-    </div>
-    <div class="plans reveal" id="plans-grid"></div>
-    <div class="sms-note reveal">
-      <div class="sms-note-icon">💬</div>
-      <div>
-        <div class="sms-note-title">About SMS reminders</div>
-        <div class="sms-note-body">All plans include SMS reminders for up to <strong>300 bookings per month</strong> — more than enough for 99% of businesses. If you consistently exceed 300 bookings/month, a small overage fee of <strong>$0.05 per SMS</strong> applies above that threshold. For a 1,000-booking month, that's only $35 extra. We'll always notify you before any overage is charged. Email reminders are always unlimited and free.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARISON -->
-<section class="section vs-section" id="comparison">
-  <div class="wrap">
-    <div class="eyebrow reveal">How we compare</div>
-    <h2 class="reveal">The <em>obvious</em> choice.</h2>
-    <p class="ssub reveal">We looked at every platform available in the UAE market. The difference is significant.</p>
-    <div class="vs-table reveal">
-      <div class="vs-head"><div class="vsh">Feature</div><div class="vsh us">⚡ Zenda</div><div class="vsh">Other platforms</div></div>
-      <div class="vs-row"><div class="vc">Monthly price (full features)</div><div class="vc us win">$39–79/mo</div><div class="vc lose">$120–300/mo</div></div>
-      <div class="vs-row"><div class="vc">Commission on any booking</div><div class="vc us win">Zero. Never.</div><div class="vc lose">Up to 20% on new clients</div></div>
-      <div class="vs-row"><div class="vc">SMS reminders included</div><div class="vc us win">Up to 300/mo in plan</div><div class="vc lose">Charged per message</div></div>
-      <div class="vs-row"><div class="vc">Full native Arabic interface</div><div class="vc us"><span class="check">✓</span> Built natively</div><div class="vc"><span class="cross">~</span> Partial / buggy</div></div>
-      <div class="vs-row"><div class="vc">GCC VAT support</div><div class="vc us win">Built in</div><div class="vc lose">Manual workaround</div></div>
-      <div class="vs-row"><div class="vc">Setup time</div><div class="vc us win">20 minutes</div><div class="vc lose">Hours to days</div></div>
-      <div class="vs-row"><div class="vc">WhatsApp booking link</div><div class="vc us"><span class="check">✓</span></div><div class="vc"><span class="cross">✗</span></div></div>
-      <div class="vs-row"><div class="vc">Cancel anytime, no penalty</div><div class="vc us"><span class="check">✓</span></div><div class="vc"><span class="check">✓</span></div></div>
-      <div class="vs-row" style="background:rgba(255,77,46,.04)"><div class="vc" style="font-weight:600;color:var(--sky)">Bottom line</div><div class="vc us win">60% cheaper. More features. Built for UAE.</div><div class="vc lose">Expensive. Hidden fees. Not built for here.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section testi-section">
-  <div class="wrap">
-    <div class="eyebrow reveal">What clients say</div>
-    <h2 class="reveal">They <em>switched.</em></h2>
-    <div class="testi-grid reveal">
-      <div class="testi"><div class="testi-stars">★★★★★</div><p class="testi-text">"We were losing 8–10 appointments a month to no-shows. The reminders fixed it in week one. Revenue went up 18% without changing anything else. The Arabic interface is perfect for our team."</p><div class="testi-author"><div class="testi-av">N</div><div><div class="testi-name">Nour Al-Rashidi</div><div class="testi-role">Beauty Salon Owner · Dubai Marina</div></div></div></div>
-      <div class="testi"><div class="testi-stars">★★★★★</div><p class="testi-text">"I was paying 20% commission every time a new client found me through another platform. Switched to Zenda — same features, zero commission. Saved AED 3,000 in the first month alone."</p><div class="testi-author"><div class="testi-av">F</div><div><div class="testi-name">Fatima K.</div><div class="testi-role">Spa Director · Abu Dhabi</div></div></div></div>
-      <div class="testi"><div class="testi-stars">★★★★★</div><p class="testi-text">"Setup took under 20 minutes. Clients were booking online that same evening. My staff needed zero training on the Arabic interface — it just worked. Best $39 I spend every month."</p><div class="testi-author"><div class="testi-av">A</div><div><div class="testi-name">Ahmed R.</div><div class="testi-role">Barbershop Owner · Sharjah</div></div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section faq-section" id="faq">
-  <div class="wrap">
-    <div class="eyebrow reveal">FAQ</div>
-    <h2 class="reveal">Honest <em>answers.</em></h2>
-    <div class="faq-grid reveal">
-      <div class="faq-item"><details><summary>Will you ever charge commission on my bookings?</summary><p>Never. Not on new clients, returning clients, or any booking at all. You pay one flat monthly fee and keep 100% of every booking. This is our core promise and it will never change.</p></details></div>
-      <div class="faq-item"><details><summary>How does the SMS reminder limit work exactly?</summary><p>Your plan includes SMS reminders for up to 300 bookings per month (that's 600 SMS — 2 per booking). This covers the vast majority of businesses. If you exceed 300 bookings in a month, we charge $0.05 per SMS above that threshold. For a 1,000-booking month, that's about $35 extra. We notify you before any overage is charged. Email reminders are always unlimited and free.</p></details></div>
-      <div class="faq-item"><details><summary>Does the Arabic really work properly?</summary><p>Yes — built natively, not translated. The full dashboard, your customer booking page, and all reminder messages work in Arabic with proper right-to-left layout and Gulf Arabic tone. Tested with business owners across UAE, KSA, and Kuwait.</p></details></div>
-      <div class="faq-item"><details><summary>Do I need any tech skills to set this up?</summary><p>No. If you can fill in a form, you can run Zenda. Add your services, set your hours, share your link. The whole setup takes 20 minutes and there is nothing that requires a developer or an agency.</p></details></div>
-      <div class="faq-item"><details><summary>Can I use Zenda for multiple locations or staff?</summary><p>Yes. Starter covers 2 staff. Growth covers 10. Pro covers unlimited staff and multiple locations. You can switch plans at any time with no penalty and no lock-in.</p></details></div>
-      <div class="faq-item"><details><summary>What if I want to cancel?</summary><p>Cancel any time from your dashboard in one click — no forms, no phone calls, no questions. You keep access until the end of your billing period. If the service does not work as described in your first 30 days, we will refund you in full.</p></details></div>
-      <div class="faq-item"><details><summary>Is Zenda GCC VAT compliant?</summary><p>Yes. Set your VAT registration number and Zenda handles VAT display on invoices and booking confirmations correctly for UAE, Saudi Arabia, and other GCC countries with a 15% or 5% VAT rate.</p></details></div>
-      <div class="faq-item"><details><summary>What is coming in future phases?</summary><p>Phase 2 (Q3 2026) adds WhatsApp campaigns, loyalty programmes, automated review collection, and Instagram booking buttons. Phase 3 adds full POS, inventory, and multi-location management. Your current plan price is locked in — no surprise upgrades ever.</p></details></div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final">
-  <div class="final-glow"></div>
-  <div class="final-content reveal">
-    <h2>Stop losing money<br>to <em>empty slots.</em></h2>
-    <p>Every missed booking, every no-show, every unanswered message is revenue gone forever. Zenda fixes all of it.</p>
-    <div class="final-btns">
-      <button class="btn-p" onclick="navTo('#pricing')">Start today — from $39 →</button>
-      <a href="zenda-booking.html" class="btn-outline" target="_blank">📅 See booking demo</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Zen<em>da</em></div>
-    <div class="footer-links">
-      <a href="mailto:hello@zenda.ae">hello@zenda.ae</a>
-      <a href="https://wa.me/971500000000" target="_blank">WhatsApp</a>
-      <a onclick="showTcs()">Terms & Conditions</a>
-    </div>
-    <div class="footer-note">© 2026 Zenda · UAE & Global</div>
-  </div>
-</footer>
-
-</div><!-- /view-home -->
-
-<!-- T&Cs VIEW -->
-<div class="view" id="view-tcs">
-  <div class="tcs-wrap">
-    <button onclick="goHome()" style="background:transparent;border:none;color:var(--dim);cursor:pointer;font-family:inherit;font-size:14px;display:flex;align-items:center;gap:6px;padding:0;margin-bottom:32px;transition:color .2s" onmouseover="this.style.color='var(--sky)'" onmouseout="this.style.color='var(--dim)'">← Back to Zenda</button>
-    <div class="tcs-h1">Terms & Conditions</div>
-    <div class="tcs-date">Last updated: May 2026 · Zenda is a global software service.</div>
-
-    <div class="tcs-section">
-      <div class="tcs-h2">1. Service Description</div>
-      <p class="tcs-p">Zenda provides business scheduling, automation, and growth software delivered as a monthly subscription. The service includes online booking pages, automated reminders, client management, analytics, and related tools as described on our website. All subscriptions are billed from the date of first payment.</p>
-    </div>
-
-    <div class="tcs-section">
-      <div class="tcs-h2">2. Billing & Cancellation</div>
-      <p class="tcs-p">Subscriptions are charged from day one of signup. You may cancel at any time from your dashboard — one click, no forms, no phone call required. You retain full access until the end of your current billing period. If the service fails to function as described in your first 30 days, we offer a full refund upon request to hello@zenda.ae. No refunds are issued after 30 days except at our discretion.</p>
-    </div>
-
-    <div class="tcs-section">
-      <div class="tcs-h2">3. SMS Reminders & Fair Use</div>
-      <div class="tcs-highlight">SMS reminders are included in your plan for up to 300 bookings per month (600 SMS total — 2 reminders per booking). This covers the vast majority of businesses. Above 300 bookings in any given calendar month, an overage fee of $0.05 per SMS applies. You will receive an email notification before any overage is billed. Email reminders are unlimited and always free on all plans.</div>
-      <p class="tcs-p">Example: A business with 1,000 bookings in a month uses 2,000 SMS. The first 600 (300 bookings × 2) are included. The remaining 1,400 SMS are charged at $0.05 each = $70 overage. Total for that month: your plan fee + $70. We will always notify you in advance.</p>
-    </div>
-
-    <div class="tcs-section">
-      <div class="tcs-h2">4. Commission Policy</div>
-      <p class="tcs-p">Zenda charges zero commission on any booking, whether from new or returning clients, and whether booked through your Zenda page, your website, Instagram, WhatsApp, or any other channel. This policy will never change for active subscribers.</p>
-    </div>
-
-    <div class="tcs-section">
-      <div class="tcs-h2">5. Acceptable Use</div>
-      <p class="tcs-p">You agree not to use Zenda to send spam, harassing messages, or communications that violate applicable laws in your jurisdiction. You must not use our service for any illegal purpose. We may terminate accounts in violation of these terms without refund.</p>
-    </div>
-
-    <div class="tcs-section">
-      <div class="tcs-h2">6. Data & Privacy</div>
-      <p class="tcs-p">Your business data and client information is stored securely. We do not sell or share your data with third parties. Payment information is processed via our payment provider and is never stored on our servers. You may request deletion of your data at any time by contacting hello@zenda.ae.</p>
-    </div>
-
-    <div class="tcs-section">
-      <div class="tcs-h2">7. Limitation of Liability</div>
-      <p class="tcs-p">Zenda's liability is limited to amounts paid in the 30 days preceding any claim. We are not liable for indirect losses including lost bookings, lost revenue, or business interruption caused by service downtime. We aim for 99%+ uptime but do not guarantee uninterrupted service.</p>
-    </div>
-
-    <div class="tcs-section">
-      <div class="tcs-h2">8. Changes to Terms</div>
-      <p class="tcs-p">We may update these terms. We will notify active subscribers by email at least 14 days before material changes take effect. Continued use of the service constitutes acceptance.</p>
-    </div>
-
-    <div class="tcs-section">
-      <div class="tcs-h2">9. Contact</div>
-      <p class="tcs-p">Questions about these terms? Email us at <a href="mailto:hello@zenda.ae" style="color:var(--coral)">hello@zenda.ae</a> or message us on WhatsApp.</p>
-    </div>
-  </div>
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">Zen<em>da</em></div>
-      <div class="footer-links"><a href="mailto:hello@zenda.ae">hello@zenda.ae</a></div>
-      <div class="footer-note">© 2026 Zenda</div>
-    </div>
-  </footer>
+<div class="htrust">
+<span class="ti">Zero commission</span>
+<span class="ti">Live in 20 minutes</span>
+<span class="ti">Arabic + English</span>
+<span class="ti">No contracts</span>
 </div>
+</div></section>
 
-<!-- CHECKOUT MODAL -->
-<div class="overlay" id="overlay">
-<div class="modal">
-  <button class="modal-close" onclick="closeModal()">×</button>
-  <div id="modal-form">
-    <div class="modal-tag" id="modal-tag">Zenda</div>
-    <h3 id="modal-title">Get started with Zenda</h3>
-    <div class="fg-row">
-      <div class="fg"><label>Your name</label><input type="text" id="f-name" placeholder="Nour Al-Rashidi"/></div>
-      <div class="fg"><label>Business name</label><input type="text" id="f-biz" placeholder="Your business"/></div>
-    </div>
-    <div class="fg"><label>Email address</label><input type="email" id="f-email" placeholder="you@business.com"/></div>
-    <div class="fg"><label>WhatsApp number</label><input type="tel" id="f-phone" placeholder="+971 50 000 0000"/></div>
-    <div class="fg"><label>Business type</label>
-      <select id="f-type">
-        <option>Beauty Salon</option><option>Spa & Wellness</option><option>Barbershop</option>
-        <option>Medical Clinic</option><option>Medical Spa</option><option>Physiotherapy</option>
-        <option>Gym & Personal Training</option><option>Photography Studio</option><option>Consultant / Coach</option>
-      </select>
-    </div>
-    <div class="fg"><label>City</label>
-      <select id="f-city">
-        <option>Dubai</option><option>Abu Dhabi</option><option>Sharjah</option><option>Riyadh</option>
-        <option>Jeddah</option><option>Doha</option><option>Kuwait City</option><option>Other</option>
-      </select>
-    </div>
-    <button class="checkout-btn" id="checkout-btn" onclick="handleCheckout()">Continue to payment →</button>
-    <p class="modal-note">Secure · Cancel anytime · Zero commission · No contracts</p>
-  </div>
-  <div class="success-state" id="modal-success">
-    <div class="succ-icon">✓</div>
-    <h3>Welcome to Zenda!</h3>
-    <p>Check your email — login credentials arrive in under 60 seconds. You'll be live today.</p>
-    <div class="nsteps">
-      <div class="nstep"><div class="nsn">1</div><span>Check inbox for your login link (~60 seconds)</span></div>
-      <div class="nstep"><div class="nsn">2</div><span>Add your services, prices and team members</span></div>
-      <div class="nstep"><div class="nsn">3</div><span>Share your booking link — clients book instantly</span></div>
-      <div class="nstep"><div class="nsn">4</div><span>Reminders fire automatically. No-shows drop. Done.</span></div>
-    </div>
-  </div>
+<div class="statsbar"><div class="si">
+<div class="st"><div class="sn">$0</div><div class="sl">Commission ever</div></div>
+<div class="st"><div class="sn">20min</div><div class="sl">Setup time</div></div>
+<div class="st"><div class="sn" style="color:var(--coral)">−60%</div><div class="sl">Fewer no-shows</div></div>
+<div class="st"><div class="sn">عربي</div><div class="sl">Native Arabic</div></div>
+<div class="st"><div class="sn">12</div><div class="sl">Industries</div></div>
+</div></div>
+
+<section class="section" style="background:var(--bg2)" id="how"><div class="wrap">
+<div class="ey">How Zenda makes you money</div>
+<h2>Four ways we grow<br><em>your revenue.</em></h2>
+<p class="ssub">Not just booking software — a complete system that fills your calendar and works while you sleep.</p>
+<div class="how-grid">
+<div class="hstep"><div class="hsn">01 — Fill your calendar</div><div class="hsi">🔗</div><h3>24/7 online booking</h3><p>Clients book while you sleep. Your Instagram bio, WhatsApp, and Google all link to your booking page. No phone tag, no missed enquiries.</p><div class="hresult">Avg +12 extra bookings/month</div></div>
+<div class="hstep"><div class="hsn">02 — Recover lost revenue</div><div class="hsi">🔔</div><h3>Automated reminders</h3><p>SMS and email reminders fire 24h and 2h before every appointment. No-shows drop 60% from week one. That's real AED back in your pocket.</p><div class="hresult">Avg AED 3,200/month recovered</div></div>
+<div class="hstep"><div class="hsn">03 — Save 3 hours daily</div><div class="hsi">✨</div><h3>AI handles the content</h3><p>Captions, review replies, listings, follow-ups — generated in seconds in Arabic and English. What took 2 hours now takes 30 seconds.</p><div class="hresult">3+ hours saved every single day</div></div>
+<div class="hstep"><div class="hsn">04 — Keep clients longer</div><div class="hsi">💌</div><h3>Automated follow-ups</h3><p>AI sends personalised messages to lapsed clients. They feel remembered. They come back. Your revenue per client goes up without extra effort.</p><div class="hresult">+28% client return rate</div></div>
+</div>
+</div></section>
+
+<section class="section" id="demo"><div class="wrap">
+<div class="ey">Live demo — try it now</div>
+<h2>See exactly what your<br><em>clients experience.</em></h2>
+<p class="ssub">Pick your industry. Walk through every step. This is the real product — not a mockup.</p>
+<div class="dnpills">
+<button class="dnp active" onclick="setDN('beauty',this)">💇 Beauty / Salon</button>
+<button class="dnp" onclick="setDN('clinic',this)">🏥 Clinic</button>
+<button class="dnp" onclick="setDN('realestate',this)">🏢 Real Estate</button>
+<button class="dnp" onclick="setDN('gym',this)">💪 Gym</button>
+<button class="dnp" onclick="setDN('restaurant',this)">🍽️ Restaurant</button>
+<button class="dnp" onclick="setDN('barber',this)">✂️ Barbershop</button>
+</div>
+<div class="dlayout">
+<div class="dphone">
+<div class="dtbar">
+<div class="ddots"><div class="ddot" style="background:#ff5f57"></div><div class="ddot" style="background:#febc2e"></div><div class="ddot" style="background:#28c840"></div></div>
+<div class="durlbar" id="d-url">zenda.ae/book/glow-beauty</div>
+<button class="dlangbtn" id="d-lang" onclick="toggleDL()">عربي</button>
+</div>
+<div class="dbody">
+<div class="dbizhead">
+<div class="dbizav" id="d-av" style="background:var(--coral)">G</div>
+<div><div class="dbizname" id="d-bn">Glow Beauty Dubai</div><div class="dbizstatus" id="d-bs">Accepting bookings now</div></div>
+</div>
+<div class="dstepnav">
+<button class="dsn a" id="dsn1" onclick="goDP(1)">1. Service</button>
+<button class="dsn" id="dsn2" onclick="goDP(2)">2. Staff</button>
+<button class="dsn" id="dsn3" onclick="goDP(3)">3. Date</button>
+<button class="dsn" id="dsn4" onclick="goDP(4)">4. Book</button>
+</div>
+<div class="dpanel a" id="dp1"><div class="dseclbl" id="d-l1">Choose a service</div><div id="d-svcs"></div></div>
+<div class="dpanel" id="dp2">
+<div class="dseclbl" id="d-l2">Choose your specialist</div>
+<div class="dstaffg" id="d-staff"></div>
+<div style="display:flex;gap:6px"><button class="dbtnG" onclick="goDP(1)">← Back</button><button class="dbtn" onclick="goDP(3)">Continue →</button></div>
+</div>
+<div class="dpanel" id="dp3">
+<div class="dseclbl" id="d-l3">Pick a date</div>
+<div class="ddateg" id="d-dates"></div>
+<div class="dseclbl" id="d-l3b" style="margin-top:2px">Available times</div>
+<div class="dslotsg" id="d-slots"></div>
+<div style="display:flex;gap:6px"><button class="dbtnG" onclick="goDP(2)">← Back</button><button class="dbtn" id="d-tbtn" disabled onclick="goDP(4)" style="opacity:.5">Continue →</button></div>
+</div>
+<div class="dpanel" id="dp4">
+<div id="d-fwrap">
+<div class="dconfsum">
+<div class="dcrow"><span class="dcl" id="d-cl1">Service</span><span class="dcv" id="d-cv1">—</span></div>
+<div class="dcrow"><span class="dcl" id="d-cl2">Specialist</span><span class="dcv" id="d-cv2">—</span></div>
+<div class="dcrow"><span class="dcl" id="d-cl3">Date & Time</span><span class="dcv" id="d-cv3">—</span></div>
+<div class="dcrow"><span class="dcl" id="d-cl4">Total</span><span class="dcv dcvpr" id="d-cv4">—</span></div>
+</div>
+<input class="dinp" type="text" id="d-cn" placeholder="Your name"/>
+<input class="dinp" type="tel" id="d-cp" placeholder="+971 50 000 0000"/>
+<input class="dinp" type="email" id="d-ce" placeholder="Email for reminders"/>
+<div class="drem" id="d-rem">📧 Confirmation + reminders sent automatically 24h and 2h before your appointment.</div>
+<button class="dbtn" onclick="doCB()">Confirm booking ✓</button>
+<button class="dbtnG" onclick="goDP(3)">← Back</button>
+</div>
+<div class="dsucc" id="d-succ">
+<div class="dsuccI">✓</div>
+<div style="font-family:'Sora',sans-serif;font-size:16px;font-weight:900;color:white;margin-bottom:6px" id="d-st">Booking confirmed!</div>
+<div style="font-size:11px;color:var(--dim);margin-bottom:10px" id="d-ss">Confirmation sent. Reminders arrive automatically.</div>
+<button class="dbtn" onclick="resetD()">← Book again</button>
 </div>
 </div>
+</div>
+</div>
+<div class="dbar">
+<div style="font-family:'Sora',sans-serif;font-size:18px;font-weight:800;color:white;letter-spacing:-.025em;margin-bottom:3px" id="d-sbH">What your clients experience</div>
+<div style="font-size:13px;color:var(--dim);margin-bottom:10px">Every step is real — exactly how the live product works.</div>
+<div class="dsf"><div class="dsfH"><div class="dsfI">📅</div><div class="dsfT">Instant booking page</div></div><div class="dsfD">Live in 20 minutes. Clients book from Instagram, WhatsApp, or Google — 24/7 without calling you.</div><div class="dsfHL">+12 bookings/month average →</div></div>
+<div class="dsf"><div class="dsfH"><div class="dsfI">🔔</div><div class="dsfT">Auto reminders</div></div><div class="dsfD">Confirmation + 24h + 2h reminders fire automatically. You do nothing. No-shows drop 60% from week one.</div><div class="dsfHL">AED 3,200/month recovered avg →</div></div>
+<div class="dsf"><div class="dsfH"><div class="dsfI">🌍</div><div class="dsfT">Arabic built natively</div></div><div class="dsfD">Click عربي above. Full RTL layout switches instantly. Gulf Arabic — built natively, not a translation.</div><div class="dsfHL">UAE-first product →</div></div>
+<div class="dsf" id="d-extraCard">
+<div class="dsfH"><div class="dsfI" id="d-eI">✍️</div><div class="dsfT" id="d-eT">AI Caption Generator</div></div>
+<div class="dsfD" id="d-eD">Generate Instagram and WhatsApp captions in Arabic and English in 5 seconds.</div>
+<div class="dsfHL" id="d-eC">Included in all plans →</div>
+</div>
+<button class="dbtn" style="margin-top:4px" onclick="openM(currentDN,'Your Business','🏪')">Get this for my business →</button>
+</div>
+</div>
+</div></section>
 
+<section class="section" id="niches" style="background:var(--bg2)"><div class="wrap">
+<div class="ey">12 industries</div>
+<h2>Built specifically<br><em>for your business.</em></h2>
+<p class="ssub">Click your industry — see exact tools and pricing for you. Not generic. Each plan is built around your real needs.</p>
+<div class="ngrid">
+<div class="nc" onclick="openM('salon','Beauty Salons','💇')"><div class="nc-hot">POPULAR</div><div class="nce">💇</div><div class="ncn">Beauty Salons</div><div class="ncd">Hair, nails, lashes, brows</div><div class="ncp">from $49/mo</div><button class="ncbtn">See plans →</button></div>
+<div class="nc" onclick="openM('spa','Spa & Wellness','🧖')"><div class="nce">🧖</div><div class="ncn">Spa & Wellness</div><div class="ncd">Massages, facials, treatments</div><div class="ncp">from $49/mo</div><button class="ncbtn">See plans →</button></div>
+<div class="nc" onclick="openM('barber','Barbershops','✂️')"><div class="nce">✂️</div><div class="ncn">Barbershops</div><div class="ncd">Walk-ins + appointments</div><div class="ncp">from $49/mo</div><button class="ncbtn">See plans →</button></div>
+<div class="nc" onclick="openM('clinic','Medical Clinics','🏥')"><div class="nce">🏥</div><div class="ncn">Medical Clinics</div><div class="ncd">GP, dental, dermatology</div><div class="ncp">from $59/mo</div><button class="ncbtn">See plans →</button></div>
+<div class="nc" onclick="openM('medspa','Medical Spas','💉')"><div class="nce">💉</div><div class="ncn">Medical Spas</div><div class="ncd">Botox, fillers, laser</div><div class="ncp">from $59/mo</div><button class="ncbtn">See plans →</button></div>
+<div class="nc" onclick="openM('physio','Physiotherapy','🦴')"><div class="nce">🦴</div><div class="ncn">Physiotherapy</div><div class="ncd">Sessions, treatment plans</div><div class="ncp">from $59/mo</div><button class="ncbtn">See plans →</button></div>
+<div class="nc" onclick="openM('gym','Gyms & Fitness','💪')"><div class="nce">💪</div><div class="ncn">Gyms & Fitness</div><div class="ncd">Classes, PT, memberships</div><div class="ncp">from $49/mo</div><button class="ncbtn">See plans →</button></div>
+<div class="nc" onclick="openM('realestate','Real Estate','🏢')"><div class="nc-hot">🔥 HOT</div><div class="nce">🏢</div><div class="ncn">Real Estate</div><div class="ncd">Listings, viewings, AI content</div><div class="ncp">from $69/mo</div><button class="ncbtn">See plans →</button></div>
+<div class="nc" onclick="openM('restaurant','Restaurants','🍽️')"><div class="nce">🍽️</div><div class="ncn">Restaurants</div><div class="ncd">Reservations + reminders</div><div class="ncp">from $49/mo</div><button class="ncbtn">See plans →</button></div>
+<div class="nc" onclick="openM('photography','Photography','📸')"><div class="nce">📸</div><div class="ncn">Photography</div><div class="ncd">Shoots, packages, studios</div><div class="ncp">from $59/mo</div><button class="ncbtn">See plans →</button></div>
+<div class="nc" onclick="openM('consultant','Coaches','🎯')"><div class="nce">🎯</div><div class="ncn">Coaches</div><div class="ncd">Online + in-person sessions</div><div class="ncp">from $59/mo</div><button class="ncbtn">See plans →</button></div>
+<div class="nc" onclick="openM('salesteam','Sales Teams','📈')"><div class="nce">📈</div><div class="ncn">Sales Teams</div><div class="ncd">Leads, follow-ups, meetings</div><div class="ncp">from $59/mo</div><button class="ncbtn">See plans →</button></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="ey">Real results · UAE businesses</div>
+<h2>These businesses stopped<br><em>losing money.</em></h2>
+<p class="ssub">Real numbers. Real businesses. Real UAE.</p>
+<div class="results-grid">
+<div class="rcard"><div class="rc-metric">AED 4,800</div><div class="rc-label">Recovered in first month</div><div class="rc-story">"I had 14 no-shows in October costing me AED 6,300. After Zenda's reminders went live, November had 3 no-shows. I recovered AED 4,800 in one month. The subscription paid for itself on day 4."</div><div class="rc-biz"><div class="rc-av">N</div><div><div class="rc-name">Nour Al-Rashidi</div><div class="rc-loc">Beauty Salon · Dubai Marina</div></div></div></div>
+<div class="rcard"><div class="rc-metric">AED 12,000</div><div class="rc-label">Saved on commissions</div><div class="rc-story">"I was on a platform taking 20% on every new client — AED 12,000 gone in 6 months. Switched to Zenda, flat $89/month, keep 100%. Best decision I've made as a business owner."</div><div class="rc-biz"><div class="rc-av">F</div><div><div class="rc-name">Fatima Al-Mansoori</div><div class="rc-loc">Medical Spa · Abu Dhabi</div></div></div></div>
+<div class="rcard"><div class="rc-metric">3 hrs</div><div class="rc-label">Saved on admin daily</div><div class="rc-story">"I spent 3 hours a day on Instagram captions, WhatsApp replies, and Google reviews. Zenda's AI does it in minutes. I gave those 3 hours back to client work — that's an extra 4-5 appointments a day."</div><div class="rc-biz"><div class="rc-av">K</div><div><div class="rc-name">Khalid Al-Hamdan</div><div class="rc-loc">Real Estate Agency · Dubai</div></div></div></div>
+<div class="rcard"><div class="rc-metric">+22</div><div class="rc-label">Extra appointments/month</div><div class="rc-story">"Before Zenda, clients had to WhatsApp to book. Half would give up or forget. Now my link is in my bio and I get 22 more bookings a month — completely automated. Same team, more money."</div><div class="rc-biz"><div class="rc-av">A</div><div><div class="rc-name">Ahmed Al-Rasheed</div><div class="rc-loc">Barbershop · Sharjah</div></div></div></div>
+<div class="rcard"><div class="rc-metric">18 min</div><div class="rc-label">From zero to first booking</div><div class="rc-story">"Signed up at 11pm, set up services and hours, shared my link on Instagram at 11:18pm. By 11:45pm I had 3 bookings. I was genuinely shocked it was that simple. Took 18 minutes total."</div><div class="rc-biz"><div class="rc-av">S</div><div><div class="rc-name">Sara Al-Qasimi</div><div class="rc-loc">Yoga Studio · Dubai</div></div></div></div>
+<div class="rcard"><div class="rc-metric">60%</div><div class="rc-label">Fewer no-shows · Week 1</div><div class="rc-story">"Friday no-shows were killing us — 22% of bookings were empty chairs. Zenda's 24h and 2h reminders cut it to 9% in the first week. For a medical clinic, that's enormous. Worth every dirham."</div><div class="rc-biz"><div class="rc-av">M</div><div><div class="rc-name">Dr. Mohammed Al-Ali</div><div class="rc-loc">Medical Clinic · Riyadh</div></div></div></div>
+</div>
+</div></section>
+
+<section class="section" id="roi" style="background:var(--bg2)"><div class="wrap">
+<div class="ey">Free ROI calculator</div>
+<h2>See exactly what you're<br><em>losing right now.</em></h2>
+<p class="ssub">Change any number — results update live. Real AED numbers for your business type.</p>
+<div class="roibox">
+<div class="rpills">
+<button class="rp active" onclick="setN('salon',this)">💇 Salon/Spa</button>
+<button class="rp" onclick="setN('clinic',this)">🏥 Clinic</button>
+<button class="rp" onclick="setN('realestate',this)">🏢 Real Estate</button>
+<button class="rp" onclick="setN('gym',this)">💪 Gym</button>
+<button class="rp" onclick="setN('restaurant',this)">🍽️ Restaurant</button>
+<button class="rp" onclick="setN('other',this)">🏪 Other</button>
+</div>
+<div class="rdesc" id="rdesc">💇 Salons lose most revenue to no-shows and missed enquiries. Reminders cut no-shows 60% from week one.</div>
+<div class="rinputs">
+<div><label class="rl" id="rl1">Appointments per month</label><input class="ri" type="number" id="ri1" value="80" min="1" oninput="calc()"/></div>
+<div><label class="rl" id="rl2">No-show rate (%)</label><input class="ri" type="number" id="ri2" value="15" min="0" max="100" oninput="calc()"/></div>
+<div><label class="rl">Average client value (AED)</label><input class="ri" type="number" id="ri3" value="250" min="1" oninput="calc()"/></div>
+<div><label class="rl">Admin hours per day</label><input class="ri" type="number" id="ri4" value="2" min="0" max="16" oninput="calc()"/></div>
+</div>
+<div class="rres">
+<div class="rrc rrr"><div class="rrn" style="color:var(--coral)" id="rr1">—</div><div class="rrl" style="color:var(--coral)" id="rrl1">Lost/month</div></div>
+<div class="rrc rrg"><div class="rrn" style="color:var(--green)" id="rr2">—</div><div class="rrl" style="color:var(--green)">Saved with Zenda</div></div>
+<div class="rrc rro"><div class="rrn" style="color:var(--gold)" id="rr3">—</div><div class="rrl" style="color:var(--gold)">Pays for itself</div></div>
+</div>
+<div class="rtxt" id="rtxt">Enter your numbers to see your ROI.</div>
+<button class="btnp" style="width:100%" onclick="gs('#niches')">See plans for my business →</button>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="ey">vs competitors</div>
+<h2>The <em>obvious</em> choice for UAE.</h2>
+<p class="ssub">Every booking platform in the UAE market, compared honestly.</p>
+<div class="vstable">
+<div class="vsh"><div class="vshc">Feature</div><div class="vshc ou">⚡ Zenda</div><div class="vshc">Other platforms</div></div>
+<div class="vsr"><div class="vc">Monthly price (full features)</div><div class="vc ou vw">$49–199/mo</div><div class="vc vl">$120–300/mo</div></div>
+<div class="vsr"><div class="vc">Commission on bookings</div><div class="vc ou vw">Zero. Never.</div><div class="vc vl">Up to 20% on new clients</div></div>
+<div class="vsr"><div class="vc">SMS reminders included</div><div class="vc ou vw">Yes — no per-SMS fee</div><div class="vc vl">Charged per message</div></div>
+<div class="vsr"><div class="vc">AI content tools</div><div class="vc ou vw">Included — niche-specific</div><div class="vc vl">Not available anywhere</div></div>
+<div class="vsr"><div class="vc">Native Arabic interface</div><div class="vc ou vw">Built natively</div><div class="vc vl">Partial or broken</div></div>
+<div class="vsr"><div class="vc">Setup time</div><div class="vc ou vw">20 minutes</div><div class="vc vl">Hours to days</div></div>
+<div class="vsr"><div class="vc">Export your data (CSV)</div><div class="vc ou vw">Free, one click</div><div class="vc vl">Locked or paid</div></div>
+<div class="vsr" style="background:rgba(255,77,46,.03)"><div class="vc" style="font-weight:700;color:white">Verdict</div><div class="vc ou vw">60% cheaper. AI included. UAE-native.</div><div class="vc vl">Expensive. Generic. No AI.</div></div>
+</div>
+</div></section>
+
+<section class="section" style="background:var(--bg2)"><div class="wrap">
+<div class="ey">FAQ</div><h2>Honest <em>answers.</em></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:860px">
+<details style="background:var(--bg3);border:1px solid var(--line);border-radius:10px;overflow:hidden"><summary style="padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;list-style:none;color:var(--sky)">Will you ever charge commission?</summary><p style="padding:0 16px 14px;font-size:13px;color:var(--dim);line-height:1.75;border-top:1px solid var(--line2)">Never. Zero commission on every booking forever. This will never change.</p></details>
+<details style="background:var(--bg3);border:1px solid var(--line);border-radius:10px;overflow:hidden"><summary style="padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;list-style:none;color:var(--sky)">Do I need tech skills?</summary><p style="padding:0 16px 14px;font-size:13px;color:var(--dim);line-height:1.75;border-top:1px solid var(--line2)">No. If you can fill a form, you can run Zenda. 20 minutes, no developer.</p></details>
+<details style="background:var(--bg3);border:1px solid var(--line);border-radius:10px;overflow:hidden"><summary style="padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;list-style:none;color:var(--sky)">How does SMS pricing work?</summary><p style="padding:0 16px 14px;font-size:13px;color:var(--dim);line-height:1.75;border-top:1px solid var(--line2)">SMS reminders included for up to 300 bookings/month. Above that $0.05/SMS. Email reminders always free.</p></details>
+<details style="background:var(--bg3);border:1px solid var(--line);border-radius:10px;overflow:hidden"><summary style="padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;list-style:none;color:var(--sky)">Can I cancel anytime?</summary><p style="padding:0 16px 14px;font-size:13px;color:var(--dim);line-height:1.75;border-top:1px solid var(--line2)">Yes. One click from your dashboard. Keep access until end of billing period.</p></details>
+<details style="background:var(--bg3);border:1px solid var(--line);border-radius:10px;overflow:hidden"><summary style="padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;list-style:none;color:var(--sky)">Is the Arabic really native?</summary><p style="padding:0 16px 14px;font-size:13px;color:var(--dim);line-height:1.75;border-top:1px solid var(--line2)">Built natively — not translated. Full RTL, Gulf Arabic tone, everything.</p></details>
+<details style="background:var(--bg3);border:1px solid var(--line);border-radius:10px;overflow:hidden"><summary style="padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;list-style:none;color:var(--sky)">Can I export my data?</summary><p style="padding:0 16px 14px;font-size:13px;color:var(--dim);line-height:1.75;border-top:1px solid var(--line2)">One click exports all clients, bookings, services as CSV. Your data is always yours.</p></details>
+</div>
+</div></section>
+
+<section class="final"><div class="wrap">
+<div class="ey" style="justify-content:center">Start today</div>
+<h2>Your calendar should be<br><em>full. Let's fix that.</em></h2>
+<p style="font-size:17px;color:var(--dim);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto">Live in 20 minutes. From $49/month. Everything included. Zero commission. Cancel anytime.</p>
+<div class="hbtns">
+<button class="btnp" onclick="gs('#niches')">Choose your industry →</button>
+<a href="https://wa.me/971500000000" target="_blank" style="padding:14px 22px;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.2);color:#25d366;border-radius:9px;font-size:14px;font-weight:600;font-family:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:7px">💬 WhatsApp us</a>
+</div>
+</div></section>
+
+<footer><div class="fi">
+<div class="flogo">Zen<em>da</em></div>
+<div class="flinks">
+<a href="mailto:hello@zenda.ae">hello@zenda.ae</a>
+<a href="https://wa.me/971500000000">WhatsApp</a>
+<a onclick="showTCS()">Terms & Conditions</a>
+</div>
+<div style="font-size:12px;color:rgba(216,226,255,.1)">© 2026 Zenda</div>
+</div></footer>
+
+<div id="tcs-page" style="display:none;background:var(--bg);padding:60px 2rem">
+<div style="max-width:760px;margin:0 auto">
+<button onclick="hideTCS()" style="background:transparent;border:none;color:var(--dim);cursor:pointer;font-family:inherit;font-size:14px;padding:0;margin-bottom:24px">← Back to Zenda</button>
+<h2 style="font-family:'Sora',sans-serif;margin-bottom:6px">Terms & Conditions</h2>
+<p style="color:var(--dim);font-size:13px;margin-bottom:32px;border-bottom:1px solid var(--line);padding-bottom:18px">Last updated May 2026 · <a href="mailto:hello@zenda.ae" style="color:var(--coral)">hello@zenda.ae</a></p>
+<div style="display:flex;flex-direction:column;gap:16px;font-size:14px;color:var(--dim);line-height:1.85">
+<div style="background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:20px"><h3 style="color:white;font-family:'Sora',sans-serif;font-size:15px;margin-bottom:8px"><span style="color:var(--coral)">1.</span> Service</h3><p>Monthly subscription for booking management, automated reminders, and AI tools. Billed from day one. No free trial.</p></div>
+<div style="background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:20px"><h3 style="color:white;font-family:'Sora',sans-serif;font-size:15px;margin-bottom:8px"><span style="color:var(--coral)">2.</span> Cancellation</h3><p>Cancel anytime from your dashboard. One click, no forms, no calls. Access continues until end of billing period. No cancellation fees.</p></div>
+<div style="background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:20px"><h3 style="color:white;font-family:'Sora',sans-serif;font-size:15px;margin-bottom:8px"><span style="color:var(--coral)">3.</span> SMS Fair Use</h3><p>300 bookings/month included. Above that: $0.05/SMS. Email reminders always unlimited and free. We notify you before any overage.</p></div>
+<div style="background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:20px"><h3 style="color:white;font-family:'Sora',sans-serif;font-size:15px;margin-bottom:8px"><span style="color:var(--coral)">4.</span> Zero Commission</h3><p>No commission on any booking. Ever. This will never change for active subscribers.</p></div>
+<div style="background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:20px"><h3 style="color:white;font-family:'Sora',sans-serif;font-size:15px;margin-bottom:8px"><span style="color:var(--coral)">5.</span> AI Credits</h3><p>Starter: 100 req/mo · Growth: 500 req/mo · Pro: 2,000 req/mo. Unused credits don't roll over. Extra credits: $5 per 100 requests.</p></div>
+<div style="background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:20px"><h3 style="color:white;font-family:'Sora',sans-serif;font-size:15px;margin-bottom:8px"><span style="color:var(--coral)">6.</span> Your Data</h3><p>All data belongs to you. Export anytime as CSV. We never sell your data. Retained 90 days after cancellation then permanently deleted.</p></div>
+<div style="background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:20px"><h3 style="color:white;font-family:'Sora',sans-serif;font-size:15px;margin-bottom:8px"><span style="color:var(--coral)">7.</span> Acceptable Use</h3><p>Zenda may only be used for legitimate business purposes. We reserve the right to suspend accounts used for spam or illegal activity.</p></div>
+<div style="background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:20px"><h3 style="color:white;font-family:'Sora',sans-serif;font-size:15px;margin-bottom:8px"><span style="color:var(--coral)">8.</span> Liability</h3><p>Zenda's liability is limited to fees paid in the 30 days preceding any claim. We aim for 99%+ uptime but cannot guarantee uninterrupted service.</p></div>
+<div style="background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:20px"><h3 style="color:white;font-family:'Sora',sans-serif;font-size:15px;margin-bottom:8px"><span style="color:var(--coral)">9.</span> Governing Law</h3><p>Governed by the laws of the United Arab Emirates. Contact: <a href="mailto:hello@zenda.ae" style="color:var(--coral)">hello@zenda.ae</a></p></div>
+</div>
+<button onclick="hideTCS()" style="margin-top:24px;padding:11px 22px;background:var(--coral);color:white;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">← Back to Zenda</button>
+</div></div>
+
+<div class="movl" id="pm"><div class="mcont">
+<button class="mclose" onclick="closeM()">×</button>
+<div class="mbiz" id="mbiz">Your Business</div>
+<div class="mhead">Choose your plan</div>
+<div class="msub" id="msub">Tools and pricing built for your industry.</div>
+<div class="ptog">
+<button class="pb" id="pmo" onclick="setPer('monthly')">Monthly</button>
+<button class="pb active" id="pan" onclick="setPer('annual')">Annual <span class="savebadge">Save 25%</span></button>
+</div>
+<div class="plangrid" id="plangrid"></div>
+<div class="mdivider">or pick exactly what you need</div>
+<div class="tpgrid" id="tpgrid"></div>
+<div class="tpsum" id="tpsum"></div>
+<button class="tpcta" id="tpcta" onclick="doTools()" disabled>Select tools above to continue →</button>
+</div></div>
+
+<div class="covl" id="co"><div class="cobox">
+<button class="coclose" onclick="closeCO()">×</button>
+<div id="cof">
+<div class="cotag" id="cotag">Zenda</div>
+<div class="cohead" id="cohead">Get started</div>
+<div class="ffrow">
+<div class="ff"><label>First name</label><input type="text" id="fn" placeholder="Nour"/></div>
+<div class="ff"><label>Business name</label><input type="text" id="bn" placeholder="My Business"/></div>
+</div>
+<div class="ff"><label>Email</label><input type="email" id="em" placeholder="you@business.com"/></div>
+<div class="ff"><label>WhatsApp</label><input type="tel" id="wp" placeholder="+971 50 000 0000"/></div>
+<div class="ff"><label>City</label><select id="cy"><option>Dubai</option><option>Abu Dhabi</option><option>Sharjah</option><option>Riyadh</option><option>Jeddah</option><option>Doha</option><option>Kuwait City</option><option>Other</option></select></div>
+<label class="tcscheck">
+<input type="checkbox" id="tcs-cb" onchange="updCOBtn()"/>
+<span class="tcscheckT">I have read and agree to Zenda's <a onclick="event.stopPropagation();showTCS()">Terms & Conditions</a>. I understand this is a monthly subscription with zero commission on all bookings.</span>
+</label>
+<button class="cosubmit" id="cosub" onclick="doCO()">Agree to T&Cs above to continue →</button>
+<p class="conote">Secure · Cancel anytime · Zero commission forever</p>
+</div>
+<div class="cosucc" id="cosucc">
+<div class="cosi">✓</div>
+<div class="cost">Welcome to Zenda!</div>
+<p style="font-size:13px;color:var(--dim)">Check your email — login arrives in under 60 seconds.</p>
+<div class="coss">
+<div class="cossi"><div class="cossc">1</div><span>Check inbox for login link</span></div>
+<div class="cossi"><div class="cossc">2</div><span>Run setup wizard — 20 minutes</span></div>
+<div class="cossi"><div class="cossc">3</div><span>Share booking link — you're live</span></div>
+<div class="cossi"><div class="cossc">4</div><span>Reminders fire automatically. Done.</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="toast" id="toast"></div>
 <script>
-const PLANS=[
-  {id:'starter',name:'Starter',tagline:'Solo practitioners and small teams starting out.',monthly:39,annual:29,
-   feats:[{t:'Online booking page',y:true},{t:'Email reminders — unlimited',y:true},{t:'SMS reminders up to 300 bookings/mo',y:true},{t:'Client database — unlimited',y:true},{t:'Up to 2 staff members',y:true},{t:'Arabic + English',y:true},{t:'WhatsApp booking link',y:true},{t:'Basic analytics',y:true},{t:'Deposit / no-show protection',y:false},{t:'Loyalty programme',y:false}],pop:false},
-  {id:'growth',name:'Growth',tagline:'Growing businesses wanting full protection and automation.',monthly:59,annual:44,
-   feats:[{t:'Everything in Starter',y:true},{t:'SMS reminders up to 300 bookings/mo',y:true},{t:'Up to 10 staff members',y:true},{t:'Deposit & card-on-file',y:true},{t:'No-show protection',y:true},{t:'Advanced analytics',y:true},{t:'Google Calendar sync',y:true},{t:'Smart waitlist',y:true},{t:'Custom booking page branding',y:true},{t:'Loyalty programme',y:false}],pop:true},
-  {id:'pro',name:'Pro',tagline:'Multi-staff, multi-location, or high-volume businesses.',monthly:79,annual:59,
-   feats:[{t:'Everything in Growth',y:true},{t:'Unlimited staff members',y:true},{t:'Loyalty & gift vouchers',y:true},{t:'Multi-location support',y:true},{t:'Staff performance reports',y:true},{t:'Priority support',y:true},{t:'GCC VAT invoicing',y:true},{t:'Bulk SMS campaigns',y:true},{t:'Custom domain',y:true},{t:'API access',y:true}],pop:false}
-];
-let period='annual';
-function setPeriod(p,btn){
-  period=p;
-  document.querySelectorAll('.pt').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderPlans();
+// ═══════════════════════════════════════════════
+// NICHE-SPECIFIC PLANS DATA
+// ═══════════════════════════════════════════════
+const NP={
+salon:{
+  plans:[
+    {id:'starter',name:'Starter',tag:'Fill your calendar + cut no-shows.',mo:49,an:37,pop:false,
+     f:[{t:'Branded booking page',y:1},{t:'SMS + email reminders',y:1},{t:'Client history + notes',y:1},{t:'Up to 3 staff',y:1},{t:'Arabic + English',y:1},{t:'AI captions (100/mo)',y:1},{t:'AI review responder',y:1},{t:'No-show deposits',y:0},{t:'Loyalty programme',y:0}]},
+    {id:'growth',name:'Growth',tag:'No-shows protection + full AI content suite.',mo:89,an:67,pop:true,
+     f:[{t:'Everything in Starter',y:1},{t:'No-show deposits',y:1},{t:'Smart waitlist',y:1},{t:'AI reply suggester',y:1},{t:'AI follow-up writer',y:1},{t:'Up to 10 staff',y:1},{t:'Advanced analytics',y:1},{t:'AI tools 500/mo',y:1},{t:'Loyalty programme',y:0}]},
+    {id:'pro',name:'Pro',tag:'Multi-location + loyalty + unlimited AI.',mo:149,an:112,pop:false,
+     f:[{t:'Everything in Growth',y:1},{t:'Multi-location support',y:1},{t:'Loyalty + gift vouchers',y:1},{t:'AI tools 2,000/mo',y:1},{t:'Unlimited staff',y:1},{t:'Priority support',y:1},{t:'GCC VAT invoicing',y:1},{t:'Custom domain',y:1},{t:'API access',y:1}]}
+  ],
+  tools:[
+    {id:'bk',ico:'📅',name:'Booking + Reminders',mo:39,an:29,desc:'Booking page + SMS/email reminders. No AI tools.'},
+    {id:'cap',ico:'✍️',name:'AI Captions',mo:24,an:18,desc:'Instagram/WhatsApp captions in Arabic + English.'},
+    {id:'rev',ico:'⭐',name:'Review Responder',mo:24,an:18,desc:'AI replies to Google reviews instantly.'},
+    {id:'rpl',ico:'💬',name:'Reply Suggester',mo:24,an:18,desc:'3 professional replies per WhatsApp message.'},
+    {id:'fu',ico:'🎯',name:'Follow-up Writer',mo:19,an:14,desc:'Re-engage lapsed clients automatically.'},
+    {id:'inv',ico:'🧾',name:'Invoice Generator',mo:14,an:10,desc:'Professional invoices in seconds.'}
+  ]
+},
+realestate:{
+  plans:[
+    {id:'starter',name:'Starter',tag:'Viewing scheduler + AI listing generator.',mo:69,an:52,pop:false,
+     f:[{t:'Viewing appointment scheduler',y:1},{t:'Email + SMS confirmations',y:1},{t:'Client enquiry database',y:1},{t:'AI listing generator (AR+EN)',y:1},{t:'AI property caption generator',y:1},{t:'Up to 3 agents',y:1},{t:'Arabic + English',y:1},{t:'Invoice generator',y:1},{t:'AI WhatsApp replies',y:0}]},
+    {id:'growth',name:'Growth',tag:'Full AI content suite for serious agents.',mo:119,an:89,pop:true,
+     f:[{t:'Everything in Starter',y:1},{t:'AI WhatsApp reply suggester',y:1},{t:'AI email reply writer',y:1},{t:'AI follow-up sequences',y:1},{t:'Up to 10 agents',y:1},{t:'AI tools 500/mo',y:1},{t:'Lead tracking + notes',y:1},{t:'Advanced analytics',y:1},{t:'Voice-to-listing (Q4 2026)',y:1}]},
+    {id:'pro',name:'Pro',tag:'Agency-wide platform with unlimited agents.',mo:199,an:149,pop:false,
+     f:[{t:'Everything in Growth',y:1},{t:'Unlimited agents',y:1},{t:'Multi-branch support',y:1},{t:'AI tools 2,000/mo',y:1},{t:'GCC VAT invoicing',y:1},{t:'Priority support',y:1},{t:'Custom domain',y:1},{t:'API access',y:1},{t:'White-label option',y:1}]}
+  ],
+  tools:[
+    {id:'lst',ico:'🏢',name:'Listing Generator',mo:29,an:22,desc:'Full property listings in Arabic + English.'},
+    {id:'cap',ico:'📸',name:'Property Captions',mo:24,an:18,desc:'Instagram/WhatsApp captions for listings.'},
+    {id:'rpl',ico:'💬',name:'Enquiry Replies',mo:24,an:18,desc:'3 reply options per client enquiry.'},
+    {id:'fu',ico:'📧',name:'Follow-up Writer',mo:19,an:14,desc:'Follow up with cold leads automatically.'},
+    {id:'bk',ico:'📅',name:'Viewing Scheduler',mo:39,an:29,desc:'Online viewing bookings + reminders.'},
+    {id:'inv',ico:'🧾',name:'Invoice Generator',mo:14,an:10,desc:'Professional invoices in seconds.'}
+  ]
+},
+clinic:{
+  plans:[
+    {id:'starter',name:'Starter',tag:'Patient booking + automated reminders.',mo:59,an:44,pop:false,
+     f:[{t:'Patient booking page',y:1},{t:'SMS + email reminders',y:1},{t:'Patient notes database',y:1},{t:'Up to 3 doctors/staff',y:1},{t:'Arabic + English',y:1},{t:'AI review responder',y:1},{t:'Invoice generator',y:1},{t:'No-show deposits',y:0},{t:'Multi-doctor routing',y:0}]},
+    {id:'growth',name:'Growth',tag:'Reduce no-shows + automate patient follow-ups.',mo:99,an:74,pop:true,
+     f:[{t:'Everything in Starter',y:1},{t:'No-show deposits',y:1},{t:'AI follow-up writer',y:1},{t:'AI reply suggester',y:1},{t:'Up to 10 staff',y:1},{t:'Smart waitlist',y:1},{t:'Advanced analytics',y:1},{t:'AI tools 500/mo',y:1},{t:'Multi-doctor routing',y:1}]},
+    {id:'pro',name:'Pro',tag:'Multi-clinic platform + full AI suite.',mo:179,an:134,pop:false,
+     f:[{t:'Everything in Growth',y:1},{t:'Multi-location support',y:1},{t:'Unlimited staff',y:1},{t:'AI tools 2,000/mo',y:1},{t:'GCC VAT invoicing',y:1},{t:'Priority support',y:1},{t:'Custom domain',y:1},{t:'API access',y:1},{t:'HL7 ready (coming)',y:1}]}
+  ],
+  tools:[
+    {id:'bk',ico:'📅',name:'Patient Booking',mo:39,an:29,desc:'Booking page + automated patient reminders.'},
+    {id:'rev',ico:'⭐',name:'Review Responder',mo:24,an:18,desc:'AI replies to Google reviews professionally.'},
+    {id:'fu',ico:'💌',name:'Patient Follow-up',mo:19,an:14,desc:'Automated follow-up messages post-appointment.'},
+    {id:'rpl',ico:'💬',name:'Reply Suggester',mo:24,an:18,desc:'3 replies per patient WhatsApp message.'},
+    {id:'cap',ico:'✍️',name:'Health Captions',mo:24,an:18,desc:'Social media captions for health content.'},
+    {id:'inv',ico:'🧾',name:'Medical Invoice',mo:14,an:10,desc:'Medical invoices in seconds.'}
+  ]
+},
+restaurant:{
+  plans:[
+    {id:'starter',name:'Starter',tag:'Table reservations + confirmation reminders.',mo:49,an:37,pop:false,
+     f:[{t:'Table reservation page',y:1},{t:'SMS + email confirmations',y:1},{t:'Guest notes + history',y:1},{t:'Up to 2 staff',y:1},{t:'Arabic + English',y:1},{t:'AI review responder',y:1},{t:'AI social captions',y:1},{t:'Deposit for large tables',y:0},{t:'Special events',y:0}]},
+    {id:'growth',name:'Growth',tag:'Stop no-shows + social media on autopilot.',mo:89,an:67,pop:true,
+     f:[{t:'Everything in Starter',y:1},{t:'Deposit for large tables',y:1},{t:'Smart waitlist',y:1},{t:'Special event / private dining',y:1},{t:'AI follow-up writer',y:1},{t:'AI captions 500/mo',y:1},{t:'Advanced analytics',y:1},{t:'Up to 10 staff',y:1},{t:'Loyalty programme',y:0}]},
+    {id:'pro',name:'Pro',tag:'Multi-branch + loyalty + full automation.',mo:149,an:112,pop:false,
+     f:[{t:'Everything in Growth',y:1},{t:'Multi-location support',y:1},{t:'Loyalty + gift vouchers',y:1},{t:'AI tools 2,000/mo',y:1},{t:'Unlimited staff',y:1},{t:'GCC VAT invoicing',y:1},{t:'Priority support',y:1},{t:'Custom domain',y:1},{t:'API access',y:1}]}
+  ],
+  tools:[
+    {id:'bk',ico:'📅',name:'Table Reservations',mo:39,an:29,desc:'Reservation page + confirmation reminders.'},
+    {id:'cap',ico:'✍️',name:'Daily Specials Captions',mo:24,an:18,desc:'Instagram/WhatsApp captions in AR + EN.'},
+    {id:'rev',ico:'⭐',name:'Review Responder',mo:24,an:18,desc:'AI replies to Google/TripAdvisor reviews.'},
+    {id:'fu',ico:'💬',name:'Guest Follow-up',mo:19,an:14,desc:'Re-engage guests after their visit.'},
+    {id:'rpl',ico:'📱',name:'Reply Suggester',mo:24,an:18,desc:'3 replies per customer WhatsApp message.'},
+    {id:'inv',ico:'🧾',name:'Event Invoice',mo:14,an:10,desc:'Event and catering invoices instantly.'}
+  ]
+},
+gym:{
+  plans:[
+    {id:'starter',name:'Starter',tag:'Class booking + session reminders.',mo:49,an:37,pop:false,
+     f:[{t:'Class + PT session booking',y:1},{t:'SMS + email reminders',y:1},{t:'Member database',y:1},{t:'Up to 3 trainers',y:1},{t:'Arabic + English',y:1},{t:'AI captions (100/mo)',y:1},{t:'AI review responder',y:1},{t:'Trial conversion tools',y:0},{t:'Loyalty programme',y:0}]},
+    {id:'growth',name:'Growth',tag:'Convert trials + retain members with AI.',mo:89,an:67,pop:true,
+     f:[{t:'Everything in Starter',y:1},{t:'Trial follow-up automation',y:1},{t:'AI follow-up writer',y:1},{t:'Membership deposit protection',y:1},{t:'Up to 10 trainers',y:1},{t:'Advanced analytics',y:1},{t:'AI tools 500/mo',y:1},{t:'Smart waitlist',y:1},{t:'Loyalty programme',y:0}]},
+    {id:'pro',name:'Pro',tag:'Multi-gym + loyalty + unlimited automation.',mo:149,an:112,pop:false,
+     f:[{t:'Everything in Growth',y:1},{t:'Multi-location support',y:1},{t:'Loyalty + membership cards',y:1},{t:'Unlimited trainers',y:1},{t:'AI tools 2,000/mo',y:1},{t:'GCC VAT invoicing',y:1},{t:'Priority support',y:1},{t:'Custom domain',y:1},{t:'API access',y:1}]}
+  ],
+  tools:[
+    {id:'bk',ico:'📅',name:'Class Booking',mo:39,an:29,desc:'Class + PT booking + attendance reminders.'},
+    {id:'fu',ico:'🎯',name:'Trial Converter',mo:19,an:14,desc:'Auto follow-up with trial members.'},
+    {id:'cap',ico:'✍️',name:'AI Captions',mo:24,an:18,desc:'Transformation and promo posts in AR + EN.'},
+    {id:'rev',ico:'⭐',name:'Review Responder',mo:24,an:18,desc:'AI replies to Google reviews.'},
+    {id:'rpl',ico:'💬',name:'Reply Suggester',mo:24,an:18,desc:'3 replies per member WhatsApp message.'},
+    {id:'inv',ico:'🧾',name:'Invoice Generator',mo:14,an:10,desc:'Membership invoices in seconds.'}
+  ]
+},
+barber:{
+  plans:[
+    {id:'starter',name:'Starter',tag:'Online booking + cut wait times.',mo:49,an:37,pop:false,
+     f:[{t:'Walk-in + appointment booking',y:1},{t:'SMS + email reminders',y:1},{t:'Client preference notes',y:1},{t:'Up to 3 barbers',y:1},{t:'Arabic + English',y:1},{t:'AI captions (100/mo)',y:1},{t:'AI review responder',y:1},{t:'Queue management',y:0},{t:'Loyalty stamps',y:0}]},
+    {id:'growth',name:'Growth',tag:'Queue management + AI content + loyalty.',mo:79,an:59,pop:true,
+     f:[{t:'Everything in Starter',y:1},{t:'Walk-in queue management',y:1},{t:'AI reply suggester',y:1},{t:'AI follow-up writer',y:1},{t:'Up to 10 barbers',y:1},{t:'Advanced analytics',y:1},{t:'AI tools 500/mo',y:1},{t:'Smart waitlist',y:1},{t:'Loyalty stamps',y:0}]},
+    {id:'pro',name:'Pro',tag:'Multi-branch + loyalty + full automation.',mo:129,an:97,pop:false,
+     f:[{t:'Everything in Growth',y:1},{t:'Multi-location support',y:1},{t:'Digital loyalty stamps',y:1},{t:'Unlimited barbers',y:1},{t:'AI tools 2,000/mo',y:1},{t:'GCC VAT invoicing',y:1},{t:'Priority support',y:1},{t:'Custom domain',y:1},{t:'API access',y:1}]}
+  ],
+  tools:[
+    {id:'bk',ico:'📅',name:'Booking + Queue',mo:39,an:29,desc:'Online booking + walk-in queue management.'},
+    {id:'cap',ico:'✍️',name:'AI Captions',mo:24,an:18,desc:'Fade and style posts in Arabic + English.'},
+    {id:'rev',ico:'⭐',name:'Review Responder',mo:24,an:18,desc:'AI replies to Google reviews.'},
+    {id:'rpl',ico:'💬',name:'Reply Suggester',mo:24,an:18,desc:'3 replies per customer message.'},
+    {id:'fu',ico:'🎯',name:'Re-engagement',mo:19,an:14,desc:'Bring back clients who haven\'t visited.'},
+    {id:'inv',ico:'🧾',name:'Invoice Generator',mo:14,an:10,desc:'Service invoices in seconds.'}
+  ]
+}};
+// Map all niches to a config
+const NMAP={salon:'salon',spa:'salon',barber:'barber',clinic:'clinic',medspa:'clinic',physio:'clinic',gym:'gym',realestate:'realestate',restaurant:'restaurant',photography:'salon',consultant:'salon',salesteam:'salon',general:'salon'};
+
+let per='annual',selT=new Set(),curPlan='',curNL='',curNK='general';
+
+function openM(niche,label,emoji){
+  curNK=niche;curNL=emoji+' '+label;
+  document.getElementById('mbiz').textContent=curNL;
+  document.getElementById('msub').textContent='Tools and pricing built specifically for '+label+'.';
+  selT.clear();rPlan();rTools();uSum();
+  document.getElementById('pm').classList.add('open');
+  document.body.style.overflow='hidden';
 }
-function renderPlans(){
-  const g=document.getElementById('plans-grid');if(!g)return;
-  g.innerHTML=PLANS.map(p=>{
-    const price=p[period];
-    const note=period==='annual'?'Billed annually · $'+(p.annual*12)+'/yr':'Billed monthly';
-    return`<div class="plan ${p.pop?'pop':''}">
-      ${p.pop?'<div class="plan-badge">Most popular</div>':''}
-      <div class="plan-name">${p.name}</div>
-      <div class="plan-tagline">${p.tagline}</div>
-      <div class="plan-price">$${price}</div>
-      <div class="plan-per">/month</div>
-      <div class="plan-note">${note}</div>
-      <ul class="plan-feats">${p.feats.map(f=>`<li class="${f.y?'':'no'}">${f.t}</li>`).join('')}</ul>
-      <button class="plan-cta" onclick="openModal('${p.id}','${p.name}','$${price}')">Get started →</button>
-    </div>`;
+function closeM(){document.getElementById('pm').classList.remove('open');document.body.style.overflow='';}
+function setPer(p){
+  per=p;
+  document.getElementById('pmo').classList.toggle('active',p==='monthly');
+  document.getElementById('pan').classList.toggle('active',p==='annual');
+  rPlan();rTools();uSum();
+}
+function getNicheData(){return NP[NMAP[curNK]]||NP.salon;}
+function rPlan(){
+  const plans=getNicheData().plans;
+  document.getElementById('plangrid').innerHTML=plans.map(p=>{
+    const pr=per==='annual'?p.an:p.mo;
+    const note=per==='annual'?'Billed annually · $'+(p.an*12)+'/yr · save 25%':'Billed monthly';
+    return'<div class="pcard'+(p.pop?' pop':'')+'">'+
+    (p.pop?'<div class="pbadge">Most popular</div>':'')+
+    '<div class="pname">'+p.name+'</div><div class="ptag">'+p.tag+'</div>'+
+    '<div class="pprrow"><div class="ppr">$'+pr+'</div><div class="pper">/mo</div></div>'+
+    '<div class="pnote">'+note+'</div>'+
+    '<ul class="pfeats">'+p.f.map(f=>'<li class="'+(f.y?'':'no')+'">'+f.t+'</li>').join('')+'</ul>'+
+    '<button class="pctabtn" onclick="selP(\''+p.id+'\',\''+p.name+'\',\'$'+pr+'\')">Get started →</button></div>';
   }).join('');
 }
-
-function showView(name){
-  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
-  document.getElementById('view-'+name).classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+function rTools(){
+  const tools=getNicheData().tools;
+  document.getElementById('tpgrid').innerHTML=tools.map(t=>{
+    const pr=per==='annual'?t.an:t.mo;const s=selT.has(t.id);
+    return'<div class="tpcard'+(s?' sel':'')+'" onclick="togT(\''+t.id+'\')">'+
+    '<div class="tpico">'+t.ico+'</div><div class="tpname">'+t.name+'</div>'+
+    '<div class="tpprice">$'+pr+'/mo</div><div class="tpdesc">'+t.desc+'</div></div>';
+  }).join('');
 }
-function goHome(){showView('home');}
-function showTcs(){showView('tcs');}
-function navTo(sel){
-  const go=()=>{const el=document.querySelector(sel);if(el)el.scrollIntoView({behavior:'smooth'});};
-  if(!document.getElementById('view-home').classList.contains('active')){showView('home');setTimeout(go,300);}
-  else go();
+function togT(id){selT.has(id)?selT.delete(id):selT.add(id);rTools();uSum();}
+function uSum(){
+  const el=document.getElementById('tpsum'),btn=document.getElementById('tpcta');
+  if(!selT.size){el.style.display='none';btn.disabled=true;btn.textContent='Select tools above to continue →';return;}
+  const tools=getNicheData().tools;
+  let tot=0;const names=[];
+  selT.forEach(id=>{const t=tools.find(t=>t.id===id);if(t){tot+=per==='annual'?t.an:t.mo;names.push(t.name);}});
+  el.style.display='block';
+  const gp=per==='annual'?getNicheData().plans[1].an:getNicheData().plans[1].mo;
+  el.innerHTML='<strong style="color:white">Selected:</strong> '+names.join(', ')+'<br><strong style="color:var(--coral)">Total: $'+tot+'/month</strong>'+(tot>=gp?' — <span style="font-size:12px;color:var(--dim)">Growth plan ($'+gp+'/mo) gives more value</span>':'');
+  btn.disabled=false;btn.textContent='Get selected tools — $'+tot+'/mo →';
 }
-
-let currentPlan='';
-function openModal(id,label,price){
-  currentPlan=id;
-  document.getElementById('modal-tag').textContent=label+' · '+price+'/mo';
-  document.getElementById('modal-form').style.display='block';
-  document.getElementById('modal-success').classList.remove('show');
-  document.getElementById('overlay').classList.add('open');
+function doTools(){
+  const tools=getNicheData().tools;
+  let tot=0;selT.forEach(id=>{const t=tools.find(t=>t.id===id);if(t)tot+=per==='annual'?t.an:t.mo;});
+  selP('custom','Custom Tools','$'+tot);
 }
-function closeModal(){document.getElementById('overlay').classList.remove('open');}
-function handleCheckout(){
-  const name=document.getElementById('f-name').value.trim();
-  const email=document.getElementById('f-email').value.trim();
-  if(!name||!email){alert('Please fill in your name and email.');return;}
-  const btn=document.getElementById('checkout-btn');
-  btn.textContent='Redirecting...';btn.disabled=true;
+function selP(id,name,price){
+  curPlan=id;closeM();
+  document.getElementById('cotag').textContent=curNL+' · '+name;
+  document.getElementById('cohead').textContent=name+' · '+price+'/month';
+  document.getElementById('cof').style.display='block';
+  document.getElementById('cosucc').classList.remove('show');
+  ['fn','bn','em','wp'].forEach(i=>document.getElementById(i).value='');
+  document.getElementById('tcs-cb').checked=false;
+  updCOBtn();
+  document.getElementById('co').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCO(){document.getElementById('co').classList.remove('open');document.body.style.overflow='';}
+function updCOBtn(){
+  const ok=document.getElementById('tcs-cb').checked;
+  const btn=document.getElementById('cosub');
+  btn.disabled=!ok;btn.classList.toggle('ready',ok);
+  btn.textContent=ok?'Continue to payment →':'Agree to T&Cs above to continue →';
+}
+function doCO(){
+  const email=document.getElementById('em').value.trim();
+  const name=document.getElementById('fn').value.trim();
+  if(!name||!email){showToast('Please fill in your name and email');return;}
+  if(!document.getElementById('tcs-cb').checked){showToast('Please agree to the Terms & Conditions');return;}
+  const btn=document.getElementById('cosub');
+  btn.textContent='Redirecting to payment...';btn.disabled=true;
   setTimeout(()=>{
-    window.open('https://YOUR_STORE.lemonsqueezy.com/checkout?plan='+currentPlan+'&email='+encodeURIComponent(email),'_blank');
-    document.getElementById('modal-form').style.display='none';
-    document.getElementById('modal-success').classList.add('show');
+    window.open('https://gumroad.com/l/zenda-'+curPlan+'?email='+encodeURIComponent(email),'_blank');
+    document.getElementById('cof').style.display='none';
+    document.getElementById('cosucc').classList.add('show');
     btn.textContent='Continue to payment →';btn.disabled=false;
   },700);
 }
-document.getElementById('overlay').addEventListener('click',e=>{if(e.target===document.getElementById('overlay'))closeModal();});
+document.getElementById('pm').addEventListener('click',e=>{if(e.target===document.getElementById('pm'))closeM();});
+document.getElementById('co').addEventListener('click',e=>{if(e.target===document.getElementById('co'))closeCO();});
 
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');}),{threshold:.04});
-document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
-renderPlans();
+// ═══════════════════════════════════════════════
+// ROI CALCULATOR
+// ═══════════════════════════════════════════════
+const ND={
+  salon:{l1:'Appointments/month',l2:'No-show rate (%)',desc:'💇 Salons lose most revenue to no-shows. Reminders cut this by 60% from week one.',ll:'Lost to no-shows',d:[80,15,250,2]},
+  clinic:{l1:'Appointments/month',l2:'No-show rate (%)',desc:'🏥 Clinics lose significant revenue when patients don\'t show. Automated reminders fix this.',ll:'Revenue lost/month',d:[60,20,300,2]},
+  realestate:{l1:'Leads/month',l2:'% missed or replied late',desc:'🏢 Real estate agents lose deals by replying too slowly or missing enquiries entirely.',ll:'Lost deal revenue',d:[40,30,5000,3]},
+  gym:{l1:'Enquiries/month',l2:'% that don\'t convert',desc:'💪 Gyms lose members from slow follow-ups. Zenda automates the entire conversion funnel.',ll:'Lost revenue/month',d:[30,40,350,2]},
+  restaurant:{l1:'Reservations/month',l2:'No-show rate (%)',desc:'🍽️ Restaurants lose revenue when reserved tables go empty. Reminders protect every cover.',ll:'Revenue lost/month',d:[200,12,180,1]},
+  other:{l1:'Appointments/month',l2:'Missed rate (%)',desc:'🏪 Every missed appointment or unanswered enquiry is money gone. Zenda captures it all.',ll:'Revenue lost/month',d:[50,15,300,2]}
+};
+let curN='salon';
+function setN(n,btn){
+  curN=n;document.querySelectorAll('.rp').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+  const c=ND[n];
+  document.getElementById('rl1').textContent=c.l1;document.getElementById('rl2').textContent=c.l2;
+  document.getElementById('rdesc').textContent=c.desc;
+  document.getElementById('ri1').value=c.d[0];document.getElementById('ri2').value=c.d[1];
+  document.getElementById('ri3').value=c.d[2];document.getElementById('ri4').value=c.d[3];
+  calc();
+}
+function calc(){
+  const c=ND[curN];
+  const a=parseFloat(document.getElementById('ri1').value)||c.d[0];
+  const r=parseFloat(document.getElementById('ri2').value)||c.d[1];
+  const v=parseFloat(document.getElementById('ri3').value)||c.d[2];
+  const ad=parseFloat(document.getElementById('ri4').value)||c.d[3];
+  const m=Math.round(a*r/100);const rl=Math.round(m*v);
+  const ac=Math.round(ad*30*25*0.4);const tl=rl+ac;
+  const sv=Math.round(rl*0.6)+ac;const zae=Math.round(49*3.67);
+  const pb=Math.max(1,Math.ceil(zae/(sv/30)));
+  const f=n=>'AED '+Math.round(n).toLocaleString();
+  document.getElementById('rr1').textContent=f(tl);document.getElementById('rrl1').textContent=c.ll;
+  document.getElementById('rr2').textContent=f(sv);
+  document.getElementById('rr3').textContent=pb<=1?'Day 1':'Day '+pb;
+  document.getElementById('rtxt').textContent='Your business loses approximately '+f(tl)+'/month — '+f(rl)+' from '+m+' missed appointments plus '+f(ac)+' in admin overhead. Zenda recovers '+f(sv)+' of this. At $49/month (AED '+zae+'), it pays for itself on day '+pb+'.';
+}
+
+// ═══════════════════════════════════════════════
+// DEMO — NICHE SPECIFIC
+// ═══════════════════════════════════════════════
+const DD={
+  beauty:{biz:'Glow Beauty Dubai',av:'G',bg:'#ff4d2e',url:'zenda.ae/book/glow-beauty',
+    svcs:[{n:'Full Highlights',m:'90 min',p:'AED 450'},{n:'Blow Dry + Style',m:'45 min',p:'AED 180'},{n:'Keratin Treatment',m:'120 min',p:'AED 680'},{n:'Cut + Finish',m:'60 min',p:'AED 220'},{n:'Nail Gel Set',m:'60 min',p:'AED 150'}],
+    staff:[{n:'Any',r:'Best match',av:'✦'},{n:'Sara',r:'Senior stylist',av:'S'},{n:'Lara',r:'Colour expert',av:'L'},{n:'Mia',r:'Nail tech',av:'M'}],
+    taken:['09:00','09:30','11:00','15:30'],
+    ex:{i:'⭐',t:'AI Review Responder',d:'Paste any Google review — professional reply instantly. In Arabic or English.',c:'Protect your 5-star rating →'}},
+  clinic:{biz:'Al Noor Medical Centre',av:'A',bg:'#0ea5e9',url:'zenda.ae/book/al-noor',
+    svcs:[{n:'GP Consultation',m:'20 min',p:'AED 200'},{n:'Dermatology',m:'30 min',p:'AED 350'},{n:'Dental Checkup',m:'30 min',p:'AED 250'},{n:'Blood Test',m:'15 min',p:'AED 150'},{n:'Follow-up Visit',m:'15 min',p:'AED 120'}],
+    staff:[{n:'Any',r:'First available',av:'✦'},{n:'Dr. Ahmed',r:'GP',av:'A'},{n:'Dr. Sara',r:'Dermatology',av:'S'},{n:'Dr. Khalid',r:'Dental',av:'K'}],
+    taken:['09:30','11:00','14:30'],
+    ex:{i:'🎯',t:'AI Follow-up Writer',d:'Personalised patient follow-up messages in Arabic or English in seconds.',c:'Improve patient retention →'}},
+  realestate:{biz:'Prime Properties Dubai',av:'P',bg:'#f0b429',url:'zenda.ae/book/prime-properties',
+    svcs:[{n:'Apartment Viewing',m:'45 min',p:'Free'},{n:'Villa Viewing',m:'60 min',p:'Free'},{n:'Investment Consult',m:'60 min',p:'Free'},{n:'Property Valuation',m:'45 min',p:'AED 500'},{n:'Contract Signing',m:'30 min',p:'Free'}],
+    staff:[{n:'Any',r:'First available',av:'✦'},{n:'Hisham',r:'Residential',av:'H'},{n:'Dana',r:'Commercial',av:'D'},{n:'Faisal',r:'Luxury villas',av:'F'}],
+    taken:['10:00','11:30','15:00'],
+    ex:{i:'🏢',t:'AI Listing Generator',d:'Property details → full bilingual listing in Arabic + English in 10 seconds. Ready for Bayut and Property Finder.',c:'Generate listings instantly →'}},
+  gym:{biz:'FitZone Dubai Marina',av:'F',bg:'#00c87a',url:'zenda.ae/book/fitzone-marina',
+    svcs:[{n:'Personal Training',m:'60 min',p:'AED 250'},{n:'Yoga Class',m:'60 min',p:'AED 100'},{n:'CrossFit Class',m:'45 min',p:'AED 100'},{n:'Free Trial Session',m:'60 min',p:'Free'},{n:'Nutrition Consult',m:'45 min',p:'AED 200'}],
+    staff:[{n:'Any',r:'First available',av:'✦'},{n:'Carlos',r:'Strength & PT',av:'C'},{n:'Aisha',r:'Yoga',av:'A'},{n:'Mike',r:'CrossFit',av:'M'}],
+    taken:['09:00','10:30','14:00'],
+    ex:{i:'🎯',t:'Trial Converter',d:'Auto follow-up with trial members who haven\'t subscribed. Personalised Arabic or English.',c:'Convert more trials →'}},
+  restaurant:{biz:'Levant Kitchen Dubai',av:'L',bg:'#e05c1a',url:'zenda.ae/book/levant-kitchen',
+    svcs:[{n:'Lunch — 2 guests',m:'1.5 hrs',p:'Free'},{n:'Dinner — 2 guests',m:'2 hrs',p:'Free'},{n:'Dinner — 4 guests',m:'2 hrs',p:'Free'},{n:'Private Dining Room',m:'3 hrs',p:'AED 500 min'},{n:'Birthday Package',m:'3 hrs',p:'AED 1,200/person'}],
+    staff:[{n:'Any',r:'Next available',av:'✦'},{n:'Ahmed',r:'Floor manager',av:'A'},{n:'Events',r:'Private dining',av:'E'}],
+    taken:['13:00','14:00','20:00'],
+    ex:{i:'✍️',t:'AI Caption Generator',d:'Daily specials and events posts in Arabic + English in seconds.',c:'Grow your social following →'}},
+  barber:{biz:'The Barber Club JLT',av:'B',bg:'#8b5cf6',url:'zenda.ae/book/barber-club-jlt',
+    svcs:[{n:'Haircut + Finish',m:'30 min',p:'AED 80'},{n:'Beard Trim + Shape',m:'20 min',p:'AED 60'},{n:'Cut + Beard Combo',m:'45 min',p:'AED 120'},{n:'Hot Towel Shave',m:'30 min',p:'AED 90'},{n:'Kids Haircut',m:'20 min',p:'AED 60'}],
+    staff:[{n:'Any',r:'Next available',av:'✦'},{n:'Omar',r:'Master barber',av:'O'},{n:'Zaid',r:'Fade specialist',av:'Z'},{n:'Tarek',r:'Beard expert',av:'T'}],
+    taken:['09:30','11:00','14:30'],
+    ex:{i:'⭐',t:'AI Review Responder',d:'Reply to every Google review professionally in seconds. Arabic or English. Never ignore a review.',c:'Protect your 5-star rating →'}}
+};
+
+let currentDN='beauty',dLang='en',dSvc=null,dStaff='Any',dDate=null,dTime=null,dPrice='';
+const DAYS_EN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const DAYS_AR=['أح','إث','ثل','أر','خم','جم','سب'];
+const SLOTS=['09:00','09:30','10:00','10:30','11:00','11:30','12:00','13:00','14:00','14:30','15:00','15:30','16:00','16:30'];
+
+function setDN(n,btn){
+  currentDN=n;
+  document.querySelectorAll('.dnp').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  dSvc=null;dStaff='Any';dDate=null;dTime=null;dPrice='';
+  loadDN();resetD();
+}
+
+function loadDN(){
+  const d=DD[currentDN];
+  document.getElementById('d-url').textContent=d.url;
+  document.getElementById('d-av').textContent=d.av;
+  document.getElementById('d-av').style.background=d.bg;
+  document.getElementById('d-bn').textContent=d.biz;
+
+  // Services
+  document.getElementById('d-svcs').innerHTML=d.svcs.map(s=>
+    '<div class="dsvc" onclick="pickS(this,\''+s.n.replace(/'/g,"\\'")+'\',\''+s.p+'\')">'+
+    '<div class="dsvcl"><div class="dsvcn">'+s.n+'</div><div class="dsvcm">'+s.m+'</div></div>'+
+    '<div class="dsvcpr">'+s.p+'</div></div>'
+  ).join('');
+
+  // Staff
+  document.getElementById('d-staff').innerHTML=d.staff.map((s,i)=>
+    '<div class="dstaff'+(i===0?' p':'')+'" onclick="pickSt(this,\''+s.n+'\')">'+
+    '<div class="dstaffav">'+s.av+'</div>'+
+    '<div class="dstaffn">'+s.n+'</div>'+
+    '<div class="dstaffr">'+s.r+'</div></div>'
+  ).join('');
+
+  // Dates
+  const today=new Date();
+  const days=dLang==='ar'?DAYS_AR:DAYS_EN;
+  document.getElementById('d-dates').innerHTML=Array.from({length:7},(_,i)=>{
+    const dt=new Date(today);dt.setDate(today.getDate()+i);
+    return'<div class="ddate'+(i===0?' p':'')+'" onclick="pickDt(this,\''+fmtD(dt)+'\')">'+
+    '<div class="ddated">'+days[dt.getDay()]+'</div>'+
+    '<div class="ddaten">'+dt.getDate()+'</div></div>';
+  }).join('');
+  if(!dDate){dDate=fmtD(today);}
+  rSlots();
+
+  // Extra feature sidebar
+  const ex=d.ex;
+  document.getElementById('d-eI').textContent=ex.i;
+  document.getElementById('d-eT').textContent=ex.t;
+  document.getElementById('d-eD').textContent=ex.d;
+  document.getElementById('d-eC').textContent=ex.c;
+  document.getElementById('d-sbH').textContent='What '+d.biz.split(' ')[0]+'\'s clients experience';
+}
+
+function fmtD(d){return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'});}
+
+function rSlots(){
+  const d=DD[currentDN];
+  document.getElementById('d-slots').innerHTML=SLOTS.map(t=>{
+    const tk=d.taken.includes(t);
+    return'<div class="dslot'+(tk?' t':'')+'"'+(tk?'':' onclick="pickSl(this,\''+t+'\')"')+'>'+t+'</div>';
+  }).join('');
+}
+
+function goDP(n){
+  for(let i=1;i<=4;i++){
+    document.getElementById('dp'+i).classList.toggle('a',i===n);
+    document.getElementById('dsn'+i).classList.toggle('a',i===n);
+  }
+  if(n===4)updSum();
+}
+
+function pickS(el,name,price){
+  document.querySelectorAll('.dsvc').forEach(e=>e.classList.remove('p'));
+  el.classList.add('p');dSvc=name;dPrice=price;
+  setTimeout(()=>goDP(2),280);
+}
+function pickSt(el,name){
+  document.querySelectorAll('.dstaff').forEach(e=>e.classList.remove('p'));
+  el.classList.add('p');dStaff=name;
+}
+function pickDt(el,ds){
+  document.querySelectorAll('.ddate').forEach(e=>e.classList.remove('p'));
+  el.classList.add('p');dDate=ds;
+}
+function pickSl(el,t){
+  document.querySelectorAll('.dslot:not(.t)').forEach(e=>e.classList.remove('p'));
+  el.classList.add('p');dTime=t;
+  const btn=document.getElementById('d-tbtn');
+  btn.disabled=false;btn.style.opacity='1';
+}
+function updSum(){
+  document.getElementById('d-cv1').textContent=dSvc||'—';
+  document.getElementById('d-cv2').textContent=dStaff||'Any available';
+  document.getElementById('d-cv3').textContent=dDate&&dTime?dDate+' · '+dTime:'—';
+  document.getElementById('d-cv4').textContent=dPrice||'—';
+}
+function doCB(){
+  const name=document.getElementById('d-cn').value.trim();
+  const phone=document.getElementById('d-cp').value.trim();
+  if(!name||!phone){showToast(dLang==='ar'?'يرجى إدخال اسمك ورقم هاتفك':'Please enter your name and phone');return;}
+  document.getElementById('d-fwrap').style.display='none';
+  document.getElementById('d-succ').classList.add('a');
+}
+function resetD(){
+  dSvc=null;dStaff='Any';dTime=null;dPrice='';
+  const fw=document.getElementById('d-fwrap');if(fw)fw.style.display='block';
+  const ds=document.getElementById('d-succ');if(ds)ds.classList.remove('a');
+  ['d-cn','d-cp','d-ce'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  const btn=document.getElementById('d-tbtn');if(btn){btn.disabled=true;btn.style.opacity='.5';}
+  goDP(1);
+}
+function toggleDL(){
+  dLang=dLang==='en'?'ar':'en';
+  const isAr=dLang==='ar';
+  document.getElementById('d-lang').textContent=isAr?'English':'عربي';
+  document.querySelector('.dbody').style.direction=isAr?'rtl':'ltr';
+  // Update labels
+  const L={
+    l1:isAr?'اختاري الخدمة':'Choose a service',
+    l2:isAr?'اختاري المختصة':'Choose your specialist',
+    l3:isAr?'اختاري التاريخ':'Pick a date',
+    l3b:isAr?'الأوقات المتاحة':'Available times',
+    cl1:isAr?'الخدمة':'Service',cl2:isAr?'المختص':'Specialist',
+    cl3:isAr?'التاريخ':'Date & Time',cl4:isAr?'الإجمالي':'Total',
+    bs:isAr?'نقبل الحجوزات الآن':'Accepting bookings now',
+    st:isAr?'تم تأكيد حجزك!':'Booking confirmed!',
+    ss:isAr?'تم إرسال التأكيد. ستصلك تذكيرات تلقائياً.':'Confirmation sent. Reminders arrive automatically.',
+    rem:isAr?'📧 ستصلك رسالة تأكيد فوراً وتذكير قبل 24 ساعة و2 ساعة من موعدك.':'📧 Confirmation + reminders sent automatically 24h and 2h before your appointment.'
+  };
+  Object.entries(L).forEach(([k,v])=>{const el=document.getElementById('d-'+k);if(el)el.textContent=v;});
+  document.getElementById('d-cn').placeholder=isAr?'اسمك':'Your name';
+  document.getElementById('d-cp').placeholder=isAr?'+971 50 000 0000':'+971 50 000 0000';
+  document.getElementById('d-ce').placeholder=isAr?'البريد الإلكتروني':'Email for reminders';
+  // Rebuild dates
+  const today=new Date();
+  const days=isAr?DAYS_AR:DAYS_EN;
+  document.getElementById('d-dates').innerHTML=Array.from({length:7},(_,i)=>{
+    const dt=new Date(today);dt.setDate(today.getDate()+i);
+    return'<div class="ddate'+(i===0?' p':'')+'" onclick="pickDt(this,\''+fmtD(dt)+'\')">'+
+    '<div class="ddated">'+days[dt.getDay()]+'</div>'+
+    '<div class="ddaten">'+dt.getDate()+'</div></div>';
+  }).join('');
+}
+
+// T&CS
+function showTCS(){
+  document.getElementById('tcs-page').style.display='block';
+  document.getElementById('tcs-page').scrollIntoView({behavior:'smooth'});
+}
+function hideTCS(){document.getElementById('tcs-page').style.display='none';window.scrollTo(0,0);}
+
+// Utils
+function gs(s){const e=document.querySelector(s);if(e)e.scrollIntoView({behavior:'smooth'});}
+let tt;
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),3500);}
+
+// INIT
+calc();rPlan();rTools();loadDN();
 </script>
 </body>
 </html>
